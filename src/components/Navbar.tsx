@@ -22,7 +22,7 @@ export default function Navbar() {
 
   // Désactiver le scroll en arrière-plan lorsque le menu mobile est ouvert
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen) { 
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
