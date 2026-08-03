@@ -5,8 +5,8 @@ export default function About() {
   return (
     <section className="about-section" id="a-propos">
       <div className="container">
-        {/* En-tête centré au-dessus de la grille */}
-        <div className="about-header">
+        {/* En-tête centré avec apparition verticale */}
+        <div className="about-header reveal">
           <div className="about-badge">
             <span className="badge-line">—</span>
             <span>À PROPOS DE NOUS</span>
@@ -17,10 +17,10 @@ export default function About() {
           </h2>
         </div>
 
-        {/* Grille 2 colonnes : Image à gauche / Texte & Boutons à droite */}
+        {/* Grille 2 colonnes */}
         <div className="about-container">
-          {/* Colonne Gauche : Image */}
-          <div className="about-image-wrapper">
+          {/* Colonne Gauche : Image (Glisse depuis la gauche) */}
+          <div className="about-image-wrapper reveal-left">
             <Image
               src="/img/bann2.jpeg"
               alt="Équipe BR World Group"
@@ -31,8 +31,8 @@ export default function About() {
             />
           </div>
 
-          {/* Colonne Droite : Textes d'explication et Actions */}
-          <div className="about-content">
+          {/* Colonne Droite : Textes et Actions (Glisse depuis la droite avec léger retard) */}
+          <div className="about-content reveal-right delay-1">
             <p className="about-intro">
               Building Renewed World (BR World Group) est spécialisée dans le
               Génie Civil, l&apos;Architecture, l&apos;Étude, le Contrôle et le
@@ -50,7 +50,7 @@ export default function About() {
               client.
             </p>
 
-            <div className="about-actions">
+            <div className="about-actions reveal delay-2">
               <Link href="#services" className="btn-about-primary">
                 <span>En savoir plus</span>
                 <i className="fa-solid fa-arrow-right"></i>

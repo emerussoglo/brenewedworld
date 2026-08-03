@@ -76,7 +76,7 @@ const servicesData: ServiceItem[] = [
     description:
       "Importation et vente de véhicules soigneusement sélectionnés, contrôlés et livrés avec accompagnement complet.",
     features: [
-      "Véhicules meufs & occasions",
+      "Véhicules neufs & occasions",
       "Import sur commande",
       "Formalités & livraison",
     ],
@@ -87,8 +87,8 @@ export default function Services() {
   return (
     <section className="services-section" id="services">
       <div className="container">
-        {/* En-tête de la section */}
-        <div className="services-header">
+        {/* En-tête de la section avec reveal */}
+        <div className="services-header reveal">
           <div className="services-badge">
             <span className="badge-line">—</span>
             <span>NOS SERVICES</span>
@@ -106,37 +106,47 @@ export default function Services() {
 
         {/* Grille des cartes services (3x2) */}
         <div className="services-grid">
-          {servicesData.map((service) => (
-            <div key={service.id} className="service-card">
-              {/* Icône avec fond arrondi pastel */}
-              <div className="service-icon-wrapper">
-                <i className={service.icon}></i>
-              </div>
+          {servicesData.map((service, index) => {
+            // Calcule le délai (delay-1, delay-2, delay-3) par ligne de 3 éléments
+            const delayClass = `delay-${(index % 3) + 1}`;
 
-              {/* Titre & Description */}
-              <h3 className="service-card-title">{service.title}</h3>
-              <p className="service-card-description">{service.description}</p>
-
-              {/* Liste à puces avec coches roses */}
-              <ul className="service-features-list">
-                {service.features.map((feature, idx) => (
-                  <li key={idx}>
-                    <i className="fa-solid fa-check service-check-icon"></i>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Lien bas de carte */}
-              <Link
-                href={`/contact?service=${service.id}`}
-                className="service-link"
+            return (
+              <div
+                key={service.id}
+                className={`service-card reveal ${delayClass}`}
               >
-                <span>Demander un devis</span>
-                <i className="fa-solid fa-arrow-right"></i>
-              </Link>
-            </div>
-          ))}
+                {/* Icône avec fond arrondi pastel */}
+                <div className="service-icon-wrapper">
+                  <i className={service.icon}></i>
+                </div>
+
+                {/* Titre & Description */}
+                <h3 className="service-card-title">{service.title}</h3>
+                <p className="service-card-description">
+                  {service.description}
+                </p>
+
+                {/* Liste à puces avec coches */}
+                <ul className="service-features-list">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx}>
+                      <i className="fa-solid fa-check service-check-icon"></i>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Lien bas de carte */}
+                <Link
+                  href={`/contact?service=${service.id}`}
+                  className="service-link"
+                >
+                  <span>Demander un devis</span>
+                  <i className="fa-solid fa-arrow-right"></i>
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

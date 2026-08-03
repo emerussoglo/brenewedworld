@@ -4,13 +4,13 @@ import "./layout.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import ScrollRevealProvider from "@/components/ScrollRevealProvider";
 
 export const metadata: Metadata = {
   title: "Building Renewed World — BR World Group",
-  description: "Génie Civil, Architecture, Étude, Contrôle & Suivi de travaux, Commerce Automobile à Calavi, Bénin.",
+  description:
+    "Génie Civil, Architecture, Étude, Contrôle & Suivi de travaux, Commerce Automobile à Calavi, Bénin.",
 };
-
-
 
 export default function RootLayout({
   children,
@@ -37,12 +37,14 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/img/log.jpeg" type="image/x-icon" />
       </head>
       <body>
-        <div className="app-container">
-          <Navbar />
-          <main className="main-content">{children}</main>
-          <Footer />
-          <FloatingButtons />
-        </div>
+        <ScrollRevealProvider>
+          <div className="app-container">
+            <Navbar />
+            <main className="main-content">{children}</main>
+            <Footer />
+            <FloatingButtons />
+          </div>
+        </ScrollRevealProvider>
       </body>
     </html>
   );
