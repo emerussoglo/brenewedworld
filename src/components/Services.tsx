@@ -87,7 +87,7 @@ export default function Services() {
   return (
     <section className="services-section" id="services">
       <div className="container">
-        {/* En-tête de la section avec reveal */}
+        {/* En-tête de la section : Entrée verticale douce */}
         <div className="services-header reveal">
           <div className="services-badge">
             <span className="badge-line">—</span>
@@ -107,13 +107,13 @@ export default function Services() {
         {/* Grille des cartes services (3x2) */}
         <div className="services-grid">
           {servicesData.map((service, index) => {
-            // Calcule le délai (delay-1, delay-2, delay-3) par ligne de 3 éléments
+            // Calcule le délai (delay-1, delay-2, delay-3) pour chaque colonne de la grille
             const delayClass = `delay-${(index % 3) + 1}`;
 
             return (
               <div
                 key={service.id}
-                className={`service-card reveal ${delayClass}`}
+                className={`service-card reveal-scale ${delayClass}`}
               >
                 {/* Icône avec fond arrondi pastel */}
                 <div className="service-icon-wrapper">

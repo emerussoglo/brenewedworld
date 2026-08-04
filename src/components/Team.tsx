@@ -48,8 +48,8 @@ export default function Team() {
   return (
     <section className="team-section" id="equipe">
       <div className="container">
-        {/* En-tête centré */}
-        <div className="team-header">
+        {/* En-tête centré avec reveal */}
+        <div className="team-header reveal">
           <div className="team-badge">
             <span className="badge-line">—</span>
             <span>NOTRE ÉQUIPE</span>
@@ -65,33 +65,40 @@ export default function Team() {
           </p>
         </div>
 
-        {/* Grille des membres (4 colonnes) */}
+        {/* Grille des membres (4 colonnes avec cascade de delay-1 à delay-4) */}
         <div className="team-grid">
-          {teamData.map((member) => (
-            <div key={member.id} className="team-card">
-              {/* Photo du membre */}
-              <div className="team-image-wrapper">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="team-image"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                />
-              </div>
+          {teamData.map((member, index) => {
+            const delayClass = `delay-${(index % 4) + 1}`;
 
-              {/* Infos textuelles (sans boutons de contact) */}
-              <div className="team-content">
-                <h3 className="team-member-name">{member.name}</h3>
-                <span className="team-member-role">{member.role}</span>
-                <p className="team-member-desc">{member.description}</p>
+            return (
+              <div
+                key={member.id}
+                className={`team-card reveal ${delayClass}`}
+              >
+                {/* Photo du membre */}
+                <div className="team-image-wrapper">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="team-image"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  />
+                </div>
+
+                {/* Infos textuelles */}
+                <div className="team-content">
+                  <h3 className="team-member-name">{member.name}</h3>
+                  <span className="team-member-role">{member.role}</span>
+                  <p className="team-member-desc">{member.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Bouton global en bas de section */}
-        <div className="team-footer-action">
+        {/* Bouton global en bas de section avec apparition en scale */}
+        <div className="team-footer-action reveal-scale delay-2">
           <Link href="/equipe" className="btn-all-team">
             <span>Découvrir toute l&apos;équipe</span>
             <i className="fa-solid fa-arrow-right"></i>

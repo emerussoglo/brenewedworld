@@ -169,7 +169,7 @@ export default function Hero() {
         className="hero-arrow hero-arrow-right"
         onClick={nextSlide}
         aria-label="Diapositive suivante"
-      >
+      > 
         <i className="fa-solid fa-chevron-right"></i>
       </button>
 

@@ -103,8 +103,8 @@ export default function Realisations() {
   return (
     <section className="projects-section" id="realisations">
       <div className="container">
-        {/* En-tête centré */}
-        <div className="projects-header">
+        {/* En-tête centré avec apparition verticale */}
+        <div className="projects-header reveal">
           <div className="projects-badge">
             <span className="badge-line">—</span>
             <span>NOS RÉALISATIONS</span>
@@ -119,7 +119,7 @@ export default function Realisations() {
           </p>
 
           {/* Boutons de Filtres */}
-          <div className="filter-buttons">
+          <div className="filter-buttons reveal delay-1">
             {categories.map((cat) => (
               <button
                 key={cat.key}
@@ -137,45 +137,52 @@ export default function Realisations() {
 
         {/* Grille des cartes projets */}
         <div className="projects-grid">
-          {filteredProjects.map((project) => (
-            <div key={project.id} className="project-card">
-              {/* Image & Badge de catégorie sur la photo */}
-              <div className="project-image-wrapper">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="project-image"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                <span className="project-category-tag">
-                  {project.categoryLabel}
-                </span>
-              </div>
+          {filteredProjects.map((project, index) => {
+            const delayClass = `delay-${(index % 3) + 1}`;
 
-              {/* Contenu textuel */}
-              <div className="project-content">
-                <h3 className="project-card-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-
-                {/* Localisation et Date */}
-                <div className="project-meta">
-                  <span className="meta-item">
-                    <i className="fa-solid fa-location-dot meta-icon"></i>
-                    {project.location}
-                  </span>
-                  <span className="meta-item">
-                    <i className="fa-regular fa-calendar meta-icon"></i>
-                    {project.date}
+            return (
+              <div
+                key={`${project.id}-${activeCategory}`}
+                className={`project-card reveal ${delayClass}`}
+              >
+                {/* Image & Badge de catégorie sur la photo */}
+                <div className="project-image-wrapper">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="project-image"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  <span className="project-category-tag">
+                    {project.categoryLabel}
                   </span>
                 </div>
+
+                {/* Contenu textuel */}
+                <div className="project-content">
+                  <h3 className="project-card-title">{project.title}</h3>
+                  <p className="project-description">{project.description}</p>
+
+                  {/* Localisation et Date */}
+                  <div className="project-meta">
+                    <span className="meta-item">
+                      <i className="fa-solid fa-location-dot meta-icon"></i>
+                      {project.location}
+                    </span>
+                    <span className="meta-item">
+                      <i className="fa-regular fa-calendar meta-icon"></i>
+                      {project.date}
+                    </span>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bouton Voir tout en bas */}
-        <div className="projects-footer-action">
+        <div className="projects-footer-action reveal delay-2">
           <Link href="/realisations" className="btn-all-projects">
             <span>Voir toute la galerie</span>
             <i className="fa-solid fa-arrow-right"></i>

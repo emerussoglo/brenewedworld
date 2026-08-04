@@ -130,7 +130,7 @@ button {
 .nav-link {
   position: relative;
   font-family: var(--font-titles);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: #334155;
   padding: 0.5rem 0;
@@ -150,7 +150,7 @@ button {
 .nav-link.active::after {
   content: "";
   position: absolute;
-  bottom: -4px;
+  bottom: 0px;
   left: 0;
   width: 100%;
   height: 3px;
@@ -158,6 +158,16 @@ button {
   border-radius: 2px;
 }
 
+.nav-links.nav-link:hover {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--secondary);
+  border-radius: 2px;
+}
 /* Bouton Devis pillule rose */
 .btn-devis {
   display: inline-flex;
@@ -166,7 +176,7 @@ button {
   gap: 0.6rem;
   background-color: var(--secondary);
   color: #ffffff;
-  padding: 0.7rem 1.5rem;
+  padding: 0.6rem .8rem;
   border-radius: 50px;
   font-size: 0.9rem;
   font-weight: 600;
@@ -189,10 +199,10 @@ button {
 /* Bouton Hamburger Mobile */
 .mobile-toggle-btn {
   display: none;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: #e2e8f0;
+  background-color: #e6eaf0;
   color: var(--primary);
   font-size: 1.25rem;
   align-items: center;
@@ -340,6 +350,20 @@ button {
   margin-left: -30px;
 }
 
+.mobile-cta-wrapper .btn-devis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background-color: var(--secondary);
+  color: #ffffff;
+  padding: 0.6rem .8rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(255, 0, 91, 0.25);
+}
 
 }
 
@@ -809,10 +833,10 @@ button {
 
 @media (max-width: 768px) {
   .hero-section {
-    margin-top: -15px;
+    margin-top: -60px;
     height: auto;
-    min-height: 560px;
-    padding: 2rem 0 3rem 0;
+    min-height: 100vh;
+    padding: 1rem 0 2.5rem 0;
   }
 
   .hero-title {
@@ -849,7 +873,9 @@ button {
 
   .btn-hero-primary,
   .btn-hero-secondary {
-    width: 100%;
+    /* width: 80%; */
+    width: fit-content;
+
     justify-content: center;
   }
 }
