@@ -137,31 +137,39 @@ export default function Footer() {
           </ul>
 
           <div className="footer-socials">
-            <a
-              href="https://wa.me/2290127010101"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-            >
-              <i className="fa-brands fa-whatsapp"></i>
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <i className="fa-brands fa-facebook-f"></i>
-            </a>
-            <a
-              href="https://tiktok.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="TikTok"
-            >
-              <i className="fa-brands fa-tiktok"></i>
-            </a>
-          </div>
+  <a
+    href="https://wa.me/2290127010101"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+  >
+    <i className="fa-brands fa-whatsapp"></i>
+  </a>
+  <a
+    href="https://facebook.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <i className="fa-brands fa-facebook-f"></i>
+  </a>
+  <a
+    href="https://tiktok.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="TikTok"
+  >
+    <i className="fa-brands fa-tiktok"></i>
+  </a>
+  <a
+    href="https://maps.app.goo.gl/kKuC24kkNUB3fSGd8"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Localisation Google Maps"
+  >
+    <i className="fa-solid fa-location-dot"></i>
+  </a>
+</div>
         </div>
       </div>
 
