@@ -551,7 +551,7 @@ button {
 ========================================== */
 @media (max-width: 640px) {
   .projects-section {
-    padding: 3.5rem 0;
+    padding: 2rem 0;
   }
 
   .projects-title {
@@ -565,6 +565,7 @@ button {
   .carousel-arrow {
     width: 36px;
     height: 36px;
+    display: none;
     font-size: 0.85rem;
   }
 }
@@ -650,11 +651,11 @@ button {
 @media (max-width: 992px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem 1.5rem;
+    gap:  0rem;
   }
 
   .stat-number {
-    font-size: 2.75rem;
+    font-size: 2rem;
   }
 }
 
@@ -665,7 +666,7 @@ button {
   }
 
   .stats-section {
-    padding: 3.5rem 1rem;
+    padding: .6rem .5rem;
   }
 }
 
