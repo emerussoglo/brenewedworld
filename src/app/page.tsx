@@ -6,6 +6,7 @@ import Services from "./services/Services";
 import Team from "@/components/Team";
 import Stats from "@/components/Stats";
 import Testimonials from "./testimonials/Testimonials";
+import ContactPage from "./contact/page";
 
 export default function Home() {
   return (

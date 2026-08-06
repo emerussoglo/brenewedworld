@@ -13,7 +13,7 @@ const navLinks = [
   { name: "Notre équipe", href: "#equipe" },
   { name: "Nos agences", href: "#agences" },
   { name: "FAQ", href: "#faq" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
