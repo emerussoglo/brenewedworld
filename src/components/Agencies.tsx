@@ -24,7 +24,7 @@ const agenciesData: Agency[] = [
     tagline: "Bureau principal & Direction technique",
     city: "Calavi",
     locationLabel: "Calavi, Bénin",
-    phone: "01 27 01 01 01",
+    phone: "01 56 10 00 00",
     email: "buildingrenewedworld@gmail.com",
     hours: {
       weekdays: "Lundi - Vendredi : 08H00 - 18H30",
@@ -41,7 +41,7 @@ const agenciesData: Agency[] = [
     tagline: "Showroom & Vente de véhicules",
     city: "Cotonou",
     locationLabel: "Cotonou, Bénin",
-    phone: "01 27 01 01 01",
+    phone: "01 56 10 00 00",
     email: "buildingrenewedworld@gmail.com",
     hours: {
       weekdays: "Lundi - Vendredi : 08H00 - 18H30",
