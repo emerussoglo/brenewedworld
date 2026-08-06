@@ -109,7 +109,7 @@ export default function Realisations() {
             <span className="badge-line">—</span>
             <span>NOS RÉALISATIONS</span>
           </div>
-
+ 
           <h2 className="projects-title">Des ouvrages qui parlent <span className="italic">pour nous</span> </h2>
 
           <p className="projects-subtitle">
@@ -191,4 +191,269 @@ export default function Realisations() {
       </div>
     </section>
   );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   RÉALISATIONS / PROJECTS SECTION
+========================================== */
+.projects-section {
+  padding: 5rem 0;
+  background-color: #ffffff;
+}
+
+/* En-tête */
+.projects-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3.4rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 1.1rem;
+  background-color: rgba(26, 98, 115, 0.08);
+  color: var(--primary, #1a6273);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.projects-title {
+  font-family: var(--font-titles);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.5px;
+}
+
+.projects-subtitle {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* --- Boutons de Filtrage --- */
+.filter-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: #ffffff;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary, #1a6273);
+  color: var(--primary, #1a6273);
+}
+
+.filter-btn.active {
+  background-color: var(--primary, #1a6273);
+  color: #ffffff;
+  border-color: var(--primary, #1a6273);
+  box-shadow: 0 4px 12px rgba(26, 98, 115, 0.2);
+}
+
+/* --- Grille des cartes --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Carte Projet */
+.project-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Conteneur Image */
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  background-color: #f1f5f9;
+}
+
+.project-image {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.04);
+}
+
+/* Tag sur l'image */
+.project-category-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  color: var(--primary, #1a6273);
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Contenu textuel de la carte */
+.project-content {
+  padding: 1.8rem 1.6rem 1.5rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.6rem;
+}
+
+.project-description {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Meta (Lieu & Date) */
+.project-meta {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.meta-icon {
+  color: #ec4899; /* Rose/fuchsia subtil comme sur la maquette */
+}
+
+/* Bouton tout en bas */
+.projects-footer-action {
+  text-align: center;
+}
+
+.btn-all-projects {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #334155;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-all-projects:hover {
+  border-color: var(--primary, #1a6273);
+  color: var(--primary, #1a6273);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-section {
+    padding: 3.5rem 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-title {
+    font-size: 1.7rem;
+  }
+
+  .filter-buttons {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
 }

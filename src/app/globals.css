@@ -266,22 +266,20 @@ button {
   }
 }
 
-
-
-
 /* ==========================================
-   RÉALISATIONS / PROJECTS SECTION
+   RÉALISATIONS / PROJECTS SECTION (DARK MODE)
 ========================================== */
 .projects-section {
   padding: 5rem 0;
-  background-color: #ffffff;
+  background-color: #1e4a55; /* Fond vert foncé / canard */
+  overflow: hidden;
 }
 
 /* En-tête */
 .projects-header {
   text-align: center;
   max-width: 760px;
-  margin: 0 auto 3.4rem auto;
+  margin: 0 auto 3rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -292,8 +290,9 @@ button {
   align-items: center;
   gap: 0.4rem;
   padding: 0.35rem 1.1rem;
-  background-color: rgba(26, 98, 115, 0.08);
-  color: var(--primary, #1a6273);
+  background-color: rgba(255, 255, 255, 0.12); /* Semi-transparent sur fond sombre */
+  color: #38bdf8; /* Bleu cyan lumineux pour un bon contraste */
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50px;
   font-size: 0.8rem;
   font-weight: 700;
@@ -306,7 +305,7 @@ button {
   font-family: var(--font-titles);
   font-size: 2.5rem;
   font-weight: 800;
-  color: #0f172a;
+  color: #ffffff; /* Titre blanc pur */
   line-height: 1.2;
   margin-bottom: 1.2rem;
   letter-spacing: -0.5px;
@@ -314,7 +313,7 @@ button {
 
 .projects-subtitle {
   font-size: 1.05rem;
-  color: #64748b;
+  color: #cbd5e1; /* Gris/blanc doux très lisible */
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -329,59 +328,126 @@ button {
 }
 
 .filter-btn {
-  background-color: #ffffff;
-  color: #475569;
-  border: 1px solid #e2e8f0;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0.6rem 1.4rem;
   border-radius: 50px;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
+  backdrop-filter: blur(4px);
 }
 
 .filter-btn:hover {
-  border-color: var(--primary, #1a6273);
-  color: var(--primary, #1a6273);
+  border-color: #ffffff;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .filter-btn.active {
-  background-color: var(--primary, #1a6273);
-  color: #ffffff;
-  border-color: var(--primary, #1a6273);
-  box-shadow: 0 4px 12px rgba(26, 98, 115, 0.2);
+  background-color: #ffffff;
+  color: #1e4a55; /* Texte couleur de fond pour le bouton actif */
+  border-color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
-/* --- Grille des cartes --- */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 3.5rem;
+/* --- Conteneur du Carrousel & Flèches --- */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Carte Projet */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #1e4a55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.prev-arrow {
+  left: 0.5rem;
+}
+
+.next-arrow {
+  right: 0.5rem;
+}
+
+/* --- Piste de défilement horizontal --- */
+.projects-carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 2.5rem 0;
+  width: 100%;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.projects-carousel::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Alignement centré automatique lors du filtrage */
+.projects-carousel.is-filtered {
+  justify-content: center;
+  overflow-x: visible;
+}
+
+/* Carte Projet (Blanche pour trancher fort sur le fond vert) */
 .project-card {
+  flex: 0 0 320px;
   background-color: #ffffff;
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0.5;
+  transform: scale(0.88);
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 0.35s ease,
+              box-shadow 0.35s ease;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+/* Carte Mise en avant (au milieu) */
+.project-card.is-centered {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* Conteneur Image */
 .project-image-wrapper {
   position: relative;
   width: 100%;
-  height: 230px;
+  height: 200px;
   background-color: #f1f5f9;
 }
 
@@ -394,41 +460,41 @@ button {
   transform: scale(1.04);
 }
 
-/* Tag sur l'image */
+/* Tag de catégorie sur l'image */
 .project-category-tag {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background-color: rgba(255, 255, 255, 0.92);
+  background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(4px);
-  color: var(--primary, #1a6273);
+  color: #1e4a55;
   padding: 0.3rem 0.85rem;
   border-radius: 50px;
   font-size: 0.78rem;
   font-weight: 700;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
-/* Contenu textuel de la carte */
+/* Contenu textuel */
 .project-content {
-  padding: 1.8rem 1.6rem 1.5rem 1.6rem;
+  padding: 1.5rem 1.4rem 1.25rem 1.4rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
 .project-card-title {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #0f172a;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-description {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #64748b;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
 }
 
 /* Meta (Lieu & Date) */
@@ -436,22 +502,22 @@ button {
   margin-top: auto;
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  font-size: 0.82rem;
+  gap: 1rem;
+  font-size: 0.8rem;
   color: #64748b;
 }
 
 .meta-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
 .meta-icon {
-  color: #ec4899; /* Rose/fuchsia subtil comme sur la maquette */
+  color: #e60067; /* Rose vif iconique */
 }
 
-/* Bouton tout en bas */
+/* Bouton bas de page */
 .projects-footer-action {
   text-align: center;
 }
@@ -460,59 +526,156 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  border: 1px solid #cbd5e1;
-  background-color: #ffffff;
-  color: #334155;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   padding: 0.85rem 2rem;
   border-radius: 50px;
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
+  backdrop-filter: blur(4px);
   transition: all 0.3s ease;
 }
 
 .btn-all-projects:hover {
-  border-color: var(--primary, #1a6273);
-  color: var(--primary, #1a6273);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  background-color: #ffffff;
+  color: #1e4a55;
+  border-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
 /* ==========================================
    RESPONSIVE
 ========================================== */
-@media (max-width: 1024px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .projects-title {
-    font-size: 2rem;
-  }
-}
-
 @media (max-width: 640px) {
   .projects-section {
     padding: 3.5rem 0;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
   }
 
   .projects-title {
     font-size: 1.7rem;
   }
 
-  .filter-buttons {
-    gap: 0.5rem;
+  .project-card {
+    flex: 0 0 270px;
   }
 
-  .filter-btn {
-    padding: 0.4rem 1rem;
-    font-size: 0.8rem;
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
   }
 }
+
+
+
+/* --- Section des statistiques --- */
+.stats-section {
+  background-color: #1e4a55; /* Fond vert canard / vert foncé */
+  padding: 4.5rem 1.5rem;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+}
+
+/* Carte individuelle */
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Classe déclenchée au scroll par l'IntersectionObserver */
+.stat-card.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Icône (Passée en rose magenta pour contraster ou vert clair/doré) */
+.stat-icon-wrapper {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon {
+  font-size: 2rem;
+  color: #ff3385; /* Rose vif lumineux qui ressort très bien sur le fond vert */
+}
+
+/* Chiffre principal */
+.stat-number {
+  font-size: 3.25rem;
+  font-weight: 800;
+  color: #ffffff; /* Texte blanc pur */
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-sans, system-ui, sans-serif);
+}
+
+.stat-suffix {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Libellé du bas */
+.stat-label {
+  font-size: 0.95rem;
+  color: #cbd5e1; /* Blanc cassé / gris clair doux */
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Responsive - Adaptations Mobiles et Tablettes */
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.5rem;
+  }
+
+  .stats-section {
+    padding: 3.5rem 1rem;
+  }
+}
+
+
+
+
+
+
+
+
 
 
 
