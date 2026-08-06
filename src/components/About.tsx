@@ -10,10 +10,10 @@ export default function About() {
           <div className="about-badge">
             <span className="badge-line">—</span>
             <span>À PROPOS DE NOUS</span>
-          </div>
+          </div> 
 
           <h2 className="about-title">
-            Une entreprise pluridisciplinaire au service de vos projets
+            Une entreprise pluridisciplinaire au service de <span className="italic">vos projets</span> 
           </h2>
         </div>
 

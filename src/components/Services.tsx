@@ -95,7 +95,7 @@ export default function Services() {
           </div>
 
           <h2 className="services-title">
-            Six expertises, une seule exigence : la qualité
+            Six expertises, une seule exigence : <span className="italic"> la qualité </span>
           </h2>
 
           <p className="services-subtitle">
@@ -150,5 +150,5 @@ export default function Services() {
         </div>
       </div>
     </section>
-  );
+  ); 
 }

@@ -38,7 +38,7 @@ export default function FloatingButtons() {
 
       {/* Bouton WhatsApp Flottant */}
       <a
-        href="https://wa.me/2290127010101"
+        href="https://wa.me/2290156100000"
         target="_blank"
         rel="noopener noreferrer"
         className="floating-whatsapp"

@@ -29,7 +29,7 @@ const slides: SlideData[] = [
     primaryBtnText: "Découvrir le génie civil",
     primaryBtnHref: "#services",
     secondaryBtnText: "Demander un devis",
-    secondaryBtnHref: "#devis",
+    secondaryBtnHref: "/devis",
     bgImage: "/img/hero-genie-civil.jpg", // Assure-toi d'avoir ces images dans public/img/
   },
   {
@@ -43,7 +43,7 @@ const slides: SlideData[] = [
     primaryBtnText: "Voir nos réalisations",
     primaryBtnHref: "#realisations",
     secondaryBtnText: "Demander un devis",
-    secondaryBtnHref: "#devis",
+    secondaryBtnHref: "/devis",
     bgImage: "/img/hero-architecture.jpg",
   },
   {
@@ -71,7 +71,7 @@ const slides: SlideData[] = [
     primaryBtnText: "Nos missions de contrôle",
     primaryBtnHref: "#services",
     secondaryBtnText: "Demander un devis",
-    secondaryBtnHref: "#devis",
+    secondaryBtnHref: "/devis",
     bgImage: "/img/hero-controle.jpg",
   },
   {
@@ -85,7 +85,7 @@ const slides: SlideData[] = [
     primaryBtnText: "Acheter un véhicule",
     primaryBtnHref: "#services",
     secondaryBtnText: "Demander un devis",
-    secondaryBtnHref: "#devis",
+    secondaryBtnHref: "/devis",
     bgImage: "/img/hero-automobile.jpg",
   },
 ];

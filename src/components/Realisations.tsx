@@ -110,7 +110,7 @@ export default function Realisations() {
             <span>NOS RÉALISATIONS</span>
           </div>
 
-          <h2 className="projects-title">Des ouvrages qui parlent pour nous</h2>
+          <h2 className="projects-title">Des ouvrages qui parlent <span className="italic">pour nous</span> </h2>
 
           <p className="projects-subtitle">
             Villas, immeubles, voiries, équipements publics et flottes

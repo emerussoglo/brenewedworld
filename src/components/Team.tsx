@@ -56,7 +56,7 @@ export default function Team() {
           </div>
 
           <h2 className="team-title">
-            Les femmes et les hommes derrière nos ouvrages
+            Les femmes et les hommes derrière <span className="italic"> nos ouvrages </span>
           </h2>
 
           <p className="team-subtitle">

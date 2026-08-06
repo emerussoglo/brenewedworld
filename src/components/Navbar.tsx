@@ -68,7 +68,7 @@ export default function Navbar() {
 
         {/* Bouton CTA Desktop */}
         <div className="navbar-desktop-cta">
-          <Link href="#devis" className="btn-devis">
+          <Link href="/devis" className="btn-devis">
             <span>Demander un devis</span>
             <i className="fa-solid fa-arrow-right"></i>
           </Link>
@@ -132,7 +132,7 @@ export default function Navbar() {
             className="mobile-cta-wrapper"
             style={{ animationDelay: `${0.08 * (navLinks.length + 1)}s` }}
           >
-            <Link href="#devis" className="btn-devis full-width" onClick={closeMenu}>
+            <Link href="/devis" className="btn-devis full-width" onClick={closeMenu}>
               <span>Demander un devis</span>
               <i className="fa-solid fa-arrow-right"></i>
             </Link>

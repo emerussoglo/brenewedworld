@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Syne:wght@700;800&display=swap');
 :root {
   /* Charte graphique */
   --primary: #1A6273;
@@ -621,7 +622,7 @@ button {
   position: relative;
   width: 100%;
   height: calc(100vh - 80px);
-  min-height: 580px;
+  min-height: 570px;
   max-height: 800px;
   overflow: hidden;
   background-color: #0d2830;
@@ -679,14 +680,14 @@ button {
   backdrop-filter: blur(4px);
 }
 
-.hero-badge i {
+.hero-badge i { 
   font-size: 0.85rem;
 }
 
 /* Titre principal */
 .hero-title {
   font-family: var(--font-titles);
-  font-size: 3.2rem;
+  font-size: 3.7rem;
   font-weight: 700;
   line-height: 1.15;
   color: #ffffff;

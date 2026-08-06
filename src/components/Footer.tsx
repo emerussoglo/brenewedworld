@@ -119,7 +119,7 @@ export default function Footer() {
             </li>
             <li>
               <i className="fa-solid fa-phone icon-pink"></i>
-              <a href="tel:0127010101">01 27 01 01 01</a>
+              <a href="tel:0156100000">01 56 10 00 00</a>
             </li>
             <li>
               <i className="fa-solid fa-envelope icon-pink"></i>
@@ -138,7 +138,7 @@ export default function Footer() {
 
           <div className="footer-socials">
   <a
-    href="https://wa.me/2290127010101"
+    href="https://wa.me/2290156100000"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="WhatsApp"
