@@ -5,6 +5,7 @@ import Realisations from "./realisations/Realisations";
 import Services from "./services/Services";
 import Team from "@/components/Team";
 import Stats from "@/components/Stats";
+import Testimonials from "./testimonials/Testimonials";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Realisations />
       <Agencies />
       <Team />
+      <Testimonials />
     </main>
   );
 }

@@ -858,6 +858,157 @@ button {
 
 
 
+/* ==========================================
+   SECTION TÉMOIGNAGES
+========================================== */
+.testimonials-section {
+  padding: 5rem 0;
+  background-color: #f6f8fa; /* Fond gris clair doux */
+  overflow: hidden;
+}
+
+/* En-tête */
+.testimonials-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.testimonials-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 1.1rem;
+  background-color: rgba(26, 98, 115, 0.08);
+  color: #1a6273;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.testimonials-title {
+  font-family: var(--font-titles, system-ui, sans-serif);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Dynamic Track */
+.testimonials-track-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonials-track {
+  display: flex;
+  gap: 1.75rem;
+  overflow-x: auto;
+  padding: 1rem 0 2rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.testimonials-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card Individuelle avec Pattern Dotted */
+.testimonial-card {
+  flex: 0 0 380px;
+  background-color: #ffffff;
+  /* Motifs de points en filigrane magenta */
+  background-image: radial-gradient(rgba(196, 0, 70, 0.08) 1.5px, transparent 1.5px);
+  background-size: 10px 10px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 2.25rem 2rem 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+}
+
+/* Guillemets Magenta */
+.quote-icon {
+  color: #e60067;
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Texte */
+.testimonial-text {
+  font-size: 0.98rem;
+  color: #475569;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+  font-weight: 450;
+  flex-grow: 1;
+}
+
+.card-divider {
+  height: 1px;
+  background-color: #f1f5f9;
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+
+/* Pied de carte */
+.testimonial-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.author-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.25rem 0;
+}
+
+.author-role {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Étoiles */
+.stars-rating {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.star-icon {
+  color: #e60067;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .testimonial-card {
+    flex: 0 0 300px;
+    padding: 1.75rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .testimonials-title {
+    font-size: 1.85rem;
+  }
+}
+
+
+
+
 
 
 /* ==========================================
