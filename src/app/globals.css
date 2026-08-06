@@ -921,6 +921,10 @@ button {
     grid-template-columns: 1fr;
     max-width: 580px;
   }
+  .agencies-title {
+  font-family: var(--font-titles);
+  font-size: 1.7rem;
+}
 }
 
 @media (max-width: 640px) {
