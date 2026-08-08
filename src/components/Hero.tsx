@@ -86,7 +86,7 @@ const slides: SlideData[] = [
     primaryBtnHref: "#services",
     secondaryBtnText: "Demander un devis",
     secondaryBtnHref: "/devis",
-    bgImage: "/img/hero-automobile.jpg",
+    bgImage: "/img/hero-automobile.jpeg",
   },
 ];
 

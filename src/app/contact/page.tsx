@@ -52,8 +52,8 @@ export default function ContactPage() {
               </div>
               <div className="info-text">
                 <span className="info-label">TÉLÉPHONE</span>
-                <a href="tel:0156100000" className="info-val">
-                  01 56 10 00 00
+                <a href="tel:0149959549" className="info-val">
+                  01 49 95 95 49
                 </a>
               </div>
             </div>
@@ -112,7 +112,7 @@ export default function ContactPage() {
 
               {/* Bouton WhatsApp */}
               <a
-                href="https://wa.me/2290156100000"
+                href="https://wa.me/2290149959549"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp"

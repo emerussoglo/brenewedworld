@@ -546,6 +546,22 @@ button {
   transform: translateY(-2px);
 }
 
+
+.projects-carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 2.5rem 2rem; /* Marges de défilement */
+  width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory; /* Permet un calage doux sur mobile */
+}
+
+.project-card {
+  cursor: pointer; /* Indique au visiteur qu'il peut cliquer sur la carte */
+  scroll-snap-align: center; /* Aligne la carte au milieu de l'écran */
+}
 /* ==========================================
    RESPONSIVE
 ========================================== */
@@ -569,6 +585,264 @@ button {
     font-size: 0.85rem;
   }
 }
+
+/* ==========================================
+   PAGE GALERIE RÉALISATIONS
+========================================== */
+.realisations-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff; /* Fond général blanc */
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ==========================================
+   1. HERO SECTION (FOND BLEU / VERT CANARD)
+========================================== */
+.realisations-hero {
+  background-color: #1e4a55; /* Couleur de fond bleu canard */
+  padding: 4rem 0 3rem 0;
+  text-align: left; /* Alignment à gauche strict */
+  color: #ffffff;
+}
+
+/* Fil d'Ariane */
+.realisations-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+}
+
+.realisations-breadcrumb a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.realisations-breadcrumb a:hover {
+  color: #ffffff;
+}
+
+.realisations-breadcrumb .breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}
+
+.realisations-breadcrumb .active {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Titre principal */
+.realisations-hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+/* Sous-titre */
+.realisations-hero-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 620px;
+  margin: 0 0 2.5rem 0;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Boutons de filtres alignés à gauche */
+.filter-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.65rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(4px);
+}
+
+.filter-btn:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.filter-btn.active {
+  background-color: #ffffff;
+  color: #1e4a55;
+  border-color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================
+   2. SECTION DE LA GRILLE (FOND BLANC)
+========================================== */
+.realisations-grid-section {
+  background-color: #ffffff; /* Fond blanc pur */
+  padding: 3rem 0 5rem 0;
+}
+
+/* Grille Statique 3 Colonnes */
+.projects-static-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Carte Individuelle */
+.project-static-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-static-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+/* Image de la carte */
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-color: #f1f5f9;
+}
+
+.project-image {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-static-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-category-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  color: #1e4a55;
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenu de la carte */
+.project-content {
+  padding: 1.5rem 1.4rem 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.project-description {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+.project-meta {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.meta-icon {
+  color: #e60067; /* Touche magenta */
+}
+
+/* ==========================================
+   3. RESPONSIVE
+========================================== */
+@media (max-width: 992px) {
+  .projects-static-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .realisations-hero-title {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .realisations-hero {
+    padding: 3.5rem 0 2.5rem 0;
+  }
+
+  .realisations-hero-title {
+    font-size: 2.1rem;
+  }
+
+  .realisations-hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .projects-static-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .realisations-grid-section {
+    padding: 2.5rem 0 4rem 0;
+  }
+}
+
+
+
+
+
 
 
 
@@ -710,7 +984,7 @@ button {
   color: var(--primary, #1a6273);
   border: 1px solid rgba(26, 98, 115, 0.15);
   border-radius: 50px;
-  font-size: 0.8rem;
+  font-size: 0.8rem; 
   font-weight: 700;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -784,12 +1058,12 @@ button {
 .team-member-name {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #0f172a; 
   margin-bottom: 0.1rem;
 }
 
 .team-member-role {
-  font-size: 0.88rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #ec4899; /* Rose/fuchsia signature du design */
   margin-bottom: .5rem;

@@ -45,7 +45,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#realisations">
+              <Link href="/realisations">
                 <i className="fa-solid fa-chevron-right arrow-bullet"></i> Réalisations
               </Link>
             </li>
@@ -119,7 +119,7 @@ export default function Footer() {
             </li>
             <li>
               <i className="fa-solid fa-phone icon-pink"></i>
-              <a href="tel:0156100000">01 56 10 00 00</a>
+              <a href="tel:0149959549">01 49 95 95 49</a>
             </li>
             <li>
               <i className="fa-solid fa-envelope icon-pink"></i>
@@ -138,7 +138,7 @@ export default function Footer() {
 
           <div className="footer-socials">
   <a
-    href="https://wa.me/2290156100000"
+    href="https://wa.me/2290149959549"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="WhatsApp"

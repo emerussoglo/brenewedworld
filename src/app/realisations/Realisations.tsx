@@ -105,7 +105,7 @@ export default function Realisations() {
 
   const isAll = activeCategory === "all";
 
-  // Duplication uniquement en mode "Tous"
+  // Duplication des cartes en mode "Tous" pour la boucle infinie
   const displayProjects = isAll
     ? [
         ...filteredProjects,
@@ -115,8 +115,9 @@ export default function Realisations() {
       ]
     : filteredProjects;
 
+  // Calcul dynamique de la carte la plus proche du centre lors du scroll
   const handleScroll = (e: UIEvent<HTMLDivElement>) => {
-    if (!isAll || isAdjustingRef.current) return;
+    if (isAdjustingRef.current) return;
 
     const container = e.currentTarget;
     const containerCenter = container.scrollLeft + container.clientWidth / 2;
@@ -136,23 +137,27 @@ export default function Realisations() {
 
     setActiveIndex(closestIndex);
 
-    const singleSetWidth = container.scrollWidth / 4;
+    // Boucle infinie uniquement si on est en mode "Tous"
+    if (isAll) {
+      const singleSetWidth = container.scrollWidth / 4;
 
-    if (container.scrollLeft <= singleSetWidth * 0.5) {
-      isAdjustingRef.current = true;
-      container.scrollLeft += singleSetWidth * 2;
-      setTimeout(() => {
-        isAdjustingRef.current = false;
-      }, 50);
-    } else if (container.scrollLeft >= singleSetWidth * 2.5) {
-      isAdjustingRef.current = true;
-      container.scrollLeft -= singleSetWidth * 2;
-      setTimeout(() => {
-        isAdjustingRef.current = false;
-      }, 50);
+      if (container.scrollLeft <= singleSetWidth * 0.5) {
+        isAdjustingRef.current = true;
+        container.scrollLeft += singleSetWidth * 2;
+        setTimeout(() => {
+          isAdjustingRef.current = false;
+        }, 50);
+      } else if (container.scrollLeft >= singleSetWidth * 2.5) {
+        isAdjustingRef.current = true;
+        container.scrollLeft -= singleSetWidth * 2;
+        setTimeout(() => {
+          isAdjustingRef.current = false;
+        }, 50);
+      }
     }
   };
 
+  // Réinitialisation de la position du scroll au changement de filtre
   useEffect(() => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
@@ -161,9 +166,20 @@ export default function Realisations() {
         container.scrollLeft = singleSetWidth * 1.5;
       } else {
         container.scrollLeft = 0;
+        setActiveIndex(0);
       }
     }
   }, [activeCategory, isAll]);
+
+  // Centrer automatiquement la carte au clic dessus
+  const handleCardClick = (e: React.MouseEvent<HTMLDivElement>, index: number) => {
+    setActiveIndex(index);
+    e.currentTarget.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  };
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -216,30 +232,28 @@ export default function Realisations() {
 
         {/* Carrousel Horizontal */}
         <div className="carousel-wrapper">
-          {isAll && (
-            <button
-              type="button"
-              className="carousel-arrow prev-arrow"
-              onClick={scrollLeft}
-              aria-label="Projet précédent"
-            >
-              <i className="fa-solid fa-chevron-left"></i>
-            </button>
-          )}
+          <button
+            type="button"
+            className="carousel-arrow prev-arrow"
+            onClick={scrollLeft}
+            aria-label="Projet précédent"
+          >
+            <i className="fa-solid fa-chevron-left"></i>
+          </button>
 
           <div
-            className={`projects-carousel ${!isAll ? "is-filtered" : ""}`}
+            className="projects-carousel"
             ref={scrollContainerRef}
             onScroll={handleScroll}
           >
             {displayProjects.map((project, index) => {
-              // En mode filtré, toutes les cartes affichées gardent leur taille normale/active
-              const isCentered = !isAll || index === activeIndex;
+              const isCentered = index === activeIndex;
 
               return (
                 <div
                   key={`${project.id}-${index}`}
                   className={`project-card ${isCentered ? "is-centered" : ""}`}
+                  onClick={(e) => handleCardClick(e, index)}
                 >
                   <div className="project-image-wrapper">
                     <Image
@@ -274,16 +288,14 @@ export default function Realisations() {
             })}
           </div>
 
-          {isAll && (
-            <button
-              type="button"
-              className="carousel-arrow next-arrow"
-              onClick={scrollRight}
-              aria-label="Projet suivant"
-            >
-              <i className="fa-solid fa-chevron-right"></i>
-            </button>
-          )}
+          <button
+            type="button"
+            className="carousel-arrow next-arrow"
+            onClick={scrollRight}
+            aria-label="Projet suivant"
+          >
+            <i className="fa-solid fa-chevron-right"></i>
+          </button>
         </div>
 
         {/* Bouton Voir tout */}

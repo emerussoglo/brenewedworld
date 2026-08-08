@@ -88,7 +88,7 @@ export default function Team() {
 
                 {/* Infos textuelles */}
                 <div className="team-content">
-                  <h3 className="team-member-name">{member.name}</h3>
+                  {/* <h3 className="team-member-name">{member.name}</h3> */}
                   <span className="team-member-role">{member.role}</span>
                   <p className="team-member-desc">{member.description}</p>
                 </div>
