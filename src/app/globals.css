@@ -1534,23 +1534,21 @@ button {
   }
 }
 
-
-
 /* ==========================================
-   PAGE DEMANDER UN DEVIS (Responsive & Épuré)
+   PAGE DEMANDER UN DEVIS (Multi-step Wizard)
 ========================================== */
 
 .devis-page {
-  background-color: #ffffff;
+  background-color: #f8fafc;
   min-height: 100vh;
   padding-bottom: 4rem;
 }
 
-/* 1. Hero Bleu Canard */
+/* Hero Section */
 .devis-hero {
   background-color: #1c525d;
   color: #ffffff;
-  padding: 3rem 1.25rem 3.5rem 1.25rem;
+  padding: 2.5rem 1.25rem 3rem 1.25rem;
 }
 
 .devis-breadcrumb {
@@ -1559,8 +1557,7 @@ button {
   gap: 0.4rem;
   font-size: 0.8rem;
   color: #94a3b8;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
 }
 
 .devis-breadcrumb a {
@@ -1580,76 +1577,248 @@ button {
 
 .devis-hero-title {
   font-family: var(--font-titles, sans-serif);
-  font-size: Clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
   font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  letter-spacing: -0.4px;
-  max-width: 700px;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
   color: #ffffff;
 }
 
 .devis-hero-subtitle {
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-size: clamp(0.88rem, 2vw, 0.98rem);
   color: #e2e8f0;
-  line-height: 1.55;
   max-width: 600px;
 }
 
-/* 2. Grid & Form Container */
+/* Layout Grid */
 .devis-content-section {
-  padding: 2.5rem 1.25rem 0 1.25rem;
+  padding: 2rem 1.25rem 0 1.25rem;
 }
 
 .devis-grid {
   display: grid;
-  grid-template-columns: 1fr 340px;
+  grid-template-columns: 1fr 320px;
   gap: 1.75rem;
   align-items: start;
-  max-width: 1200px;
+  max-width: 1150px;
   margin: 0 auto;
 }
 
-/* Card Formulaire (Gauche) */
+/* Barre de progression */
+.step-progress-header {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress-bar-bg {
+  flex: 1;
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #ff006e;
+  transition: width 0.3s ease;
+}
+
+.step-counter {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1c525d;
+}
+
+/* Card Formulaire / Steps */
 .devis-form-card {
   background-color: #ffffff;
   border-radius: 16px;
   border: 1px solid #e2e8f0;
-  padding: 2rem;
+  padding: 2.25rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
-.form-card-title {
-  font-family: var(--font-titles, sans-serif);
-  font-size: 1.45rem;
+.step-category {
+  font-size: 0.72rem;
   font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 0.25rem;
+  letter-spacing: 0.08em;
+  color: #ff006e;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  display: block;
 }
 
-.form-card-subtitle {
-  font-size: 0.85rem;
-  color: #64748b;
+.step-question {
+  font-family: var(--font-titles, sans-serif);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
   margin-bottom: 1.5rem;
 }
 
-.devis-form {
+/* Etape 0 : Intro */
+.step-intro {
+  padding: 1.5rem 0;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  align-items: center;
 }
 
+.intro-icon-circle,
+.success-icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #e0f2fe;
+  color: #1c525d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.success-icon-circle {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.step-intro h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.step-intro p {
+  color: #64748b;
+  font-size: 0.9rem;
+  max-width: 480px;
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+}
+
+.btn-start-wizard {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.75rem;
+  background-color: #ff006e;
+  color: #ffffff;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(255, 0, 110, 0.25);
+}
+
+.btn-start-wizard:hover {
+  background-color: #e00060;
+  transform: translateY(-2px);
+}
+
+/* Grille d'options (Cartes interactives) */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+.option-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 1.15rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.option-card:hover {
+  border-color: #1c525d;
+  background-color: #f0fdfa;
+}
+
+.option-card.selected {
+  border-color: #1c525d;
+  background-color: #f0fdfa;
+  box-shadow: 0 0 0 1px #1c525d;
+}
+
+.option-icon {
+  font-size: 1.1rem;
+  color: #1c525d;
+}
+
+.option-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1e293b;
+  flex: 1;
+}
+
+.check-icon {
+  color: #ff006e;
+  font-size: 1rem;
+}
+
+/* Liste d'options vertical (Budget) */
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.option-card-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.95rem 1.15rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-card-row:hover {
+  border-color: #1c525d;
+  background-color: #f0fdfa;
+}
+
+.option-card-row.selected {
+  border-color: #1c525d;
+  background-color: #f0fdfa;
+  box-shadow: 0 0 0 1px #1c525d;
+}
+
+.emoji-icon {
+  font-size: 1.2rem;
+}
+
+/* Form inputs */
 .form-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  width: 100%;
+  margin-bottom: 1rem;
 }
 
 .form-group label {
@@ -1659,16 +1828,15 @@ button {
 }
 
 .asterisk {
-  color: #ec4899;
+  color: #ff006e;
 }
 
 .form-group input,
-.form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 0.7rem 0.95rem;
+  padding: 0.75rem 0.95rem;
   border-radius: 10px;
-  border: 1px solid #e2e8f0;
+  border: 1.5px solid #e2e8f0;
   background-color: #ffffff;
   font-size: 0.88rem;
   color: #1e293b;
@@ -1679,18 +1847,11 @@ button {
 }
 
 .form-group input:focus,
-.form-group select:focus,
 .form-group textarea:focus {
   border-color: #1c525d;
   box-shadow: 0 0 0 3px rgba(28, 82, 93, 0.12);
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: #94a3b8;
-}
-
-/* Box Notice Pièces Jointes */
 .attachment-notice {
   background-color: #f8fafc;
   border-radius: 10px;
@@ -1700,36 +1861,160 @@ button {
   gap: 0.75rem;
   font-size: 0.8rem;
   color: #475569;
-  line-height: 1.45;
 }
 
 .notice-icon {
-  color: #ec4899;
+  color: #ff006e;
   font-size: 0.95rem;
   margin-top: 0.1rem;
-  flex-shrink: 0;
 }
 
-.attachment-notice a {
+/* Récapitulatif Final (Step 5) */
+.summary-intro {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.summary-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.summary-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+}
+
+.summary-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.summary-card-header h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1c525d;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-edit {
+  background: none;
+  border: none;
+  color: #ff006e;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-edit:hover {
+  background-color: #fce7f3;
+}
+
+.summary-card p {
+  font-size: 0.85rem;
   color: #334155;
-  font-weight: 600;
-  text-decoration: underline;
-  word-break: break-all;
+  margin: 0;
+  font-weight: 500;
 }
 
-/* Bouton Rose Soumission */
+.summary-desc-text {
+  white-space: pre-line;
+  line-height: 1.45;
+}
+
+.summary-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.82rem;
+  color: #334155;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.4rem;
+}
+
+/* Boutons de navigation bas */
+.wizard-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.btn-wizard-back {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: 1px solid #cbd5e1;
+  padding: 0.65rem 1.2rem;
+  border-radius: 50px;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-wizard-back:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.btn-wizard-next {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #1c525d;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 50px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-wizard-next:hover:not(:disabled) {
+  background-color: #143d46;
+  transform: translateY(-1px);
+}
+
+.btn-wizard-next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .btn-submit-devis {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   width: 100%;
-  padding: 0.85rem;
+  padding: 0.9rem;
   background-color: #ff006e;
   color: #ffffff;
   border: none;
   border-radius: 50px;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -1739,38 +2024,34 @@ button {
 .btn-submit-devis:hover {
   background-color: #e00060;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255, 0, 110, 0.3);
 }
 
-/* 3. Sidebar (Droite) */
+/* Sidebar (Droite) */
 .devis-sidebar {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-/* Carte Appel Rapide (Bleu Canard) */
 .quick-call-card {
   background-color: #1c525d;
   color: #ffffff;
   border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 6px 20px rgba(28, 82, 93, 0.12);
+  padding: 1.35rem;
 }
 
 .quick-call-title {
-  font-family: var(--font-titles, sans-serif);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 800;
-  margin-bottom: 0.5rem;
-  color: #fff;
+  margin-bottom: 0.4rem;
+  color: #ffffff;
 }
 
 .quick-call-text {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   line-height: 1.45;
-  margin-bottom: 1.2rem;
-  color: #fff;
+  margin-bottom: 1rem;
+  color: #e2e8f0;
 }
 
 .quick-call-btn {
@@ -1780,36 +2061,27 @@ button {
   gap: 0.5rem;
   background-color: #ffffff;
   color: #1c525d;
-  padding: 0.65rem 1rem;
+  padding: 0.6rem 1rem;
   border-radius: 50px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   text-decoration: none;
-  transition: all 0.2s ease;
   width: 100%;
-  box-sizing: border-radius;
+  box-sizing: border-box;
 }
 
-.quick-call-btn:hover {
-  background-color: #f8fafc;
-  transform: translateY(-1px);
-}
-
-/* Carte Process (Ce qui se passe ensuite) */
 .process-card {
   background-color: #ffffff;
   border-radius: 16px;
   border: 1px solid #e2e8f0;
-  padding: 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  padding: 1.35rem;
 }
 
 .process-card-title {
-  font-family: var(--font-titles, sans-serif);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 800;
   color: #0f172a;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .process-list {
@@ -1818,84 +2090,57 @@ button {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 0.9rem;
 }
 
 .process-list li {
   display: flex;
   align-items: flex-start;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 .step-number {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background-color: #e0f2fe;
   color: #0284c7;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 0.05rem;
 }
 
 .process-list p {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: #64748b;
-  line-height: 1.45;
   margin: 0;
+  line-height: 1.4;
 }
 
-/* ==========================================
-   RESPONSIVE MEDIA QUERIES
-========================================== */
-
-/* Breakpoint 1: Tablettes et petits écrans PC (<= 992px) */
+/* Responsive */
 @media (max-width: 992px) {
   .devis-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .devis-sidebar {
-    order: 2;
   }
 }
 
-/* Breakpoint 2: Mobiles (<= 640px) */
 @media (max-width: 640px) {
-  .devis-hero {
-    padding: 2rem .9rem 2rem .9rem;
+  .options-grid {
+    grid-template-columns: 1fr;
   }
 
-  .devis-content-section {
-    padding: 1rem .9rem 0 1rem;
+  .form-row,
+  .summary-contact-list {
+    grid-template-columns: 1fr;
   }
 
   .devis-form-card {
-    padding: 1rem;
-    border-radius: 14px;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: .5rem;
-  }
-
-  .quick-call-card,
-  .process-card {
-    padding: 0.5rem;
-    border-radius: 14px;
-  }
-
-  .devis-page {
-    padding-bottom: 1rem;
+    padding: 1.25rem;
   }
 }
-
 
 
 
