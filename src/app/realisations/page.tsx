@@ -111,7 +111,7 @@ export default function RealisationsPage() {
       <span className="breadcrumb-separator">/</span>
       <span className="active">Réalisations</span>
     </nav>
-
+ 
     <h1 className="realisations-hero-title">Toutes nos réalisations</h1>
 
     <p className="realisations-hero-subtitle">
@@ -120,8 +120,8 @@ export default function RealisationsPage() {
     </p>
 
     {/* Filtres par catégories */}
-    <div className="filter-buttons">
-      {categories.map((cat) => (
+    <div className="filter-button">
+      {categories.map((cat) => ( 
         <button
           key={cat.key}
           type="button"

@@ -5,14 +5,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
+// Utilisation des chemins absolus (/#id) pour rediriger systématiquement vers l'accueil
 const navLinks = [
   { name: "Accueil", href: "/" },
-  { name: "À propos", href: "#a-propos" },
-  { name: "Services", href: "#services" },
+  { name: "À propos", href: "/#a-propos" },
+  { name: "Services", href: "/#services" },
   { name: "Réalisations", href: "/realisations" },
-  { name: "Notre équipe", href: "#equipe" },
-  { name: "Nos agences", href: "#agences" },
-  { name: "FAQ", href: "#faq" },
+  { name: "Notre équipe", href: "/#equipe" },
+  { name: "Nos agences", href: "/#agences" },
+  { name: "FAQ", href: "/#faq" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -22,7 +23,7 @@ export default function Navbar() {
 
   // Désactiver le scroll en arrière-plan lorsque le menu mobile est ouvert
   useEffect(() => {
-    if (isOpen) { 
+    if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
@@ -51,12 +52,18 @@ export default function Navbar() {
         <nav className="navbar-desktop-nav">
           <ul className="navbar-links">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              // Vérification d'état actif propre aux pages principales
+              const isActive =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(link.href) && link.href !== "/#";
+
               return (
                 <li key={link.name}>
                   <Link
                     href={link.href}
                     className={`nav-link ${isActive ? "active" : ""}`}
+                    onClick={closeMenu}
                   >
                     {link.name}
                   </Link>
@@ -68,7 +75,7 @@ export default function Navbar() {
 
         {/* Bouton CTA Desktop */}
         <div className="navbar-desktop-cta">
-          <Link href="/devis" className="btn-devis">
+          <Link href="/devis" className="btn-devis" onClick={closeMenu}>
             <span>Demander un devis</span>
             <i className="fa-solid fa-arrow-right"></i>
           </Link>
@@ -108,7 +115,11 @@ export default function Navbar() {
         <nav className="mobile-menu-nav">
           <ul className="mobile-links-list">
             {navLinks.map((link, index) => {
-              const isActive = pathname === link.href;
+              const isActive =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(link.href) && link.href !== "/#";
+
               return (
                 <li
                   key={link.name}

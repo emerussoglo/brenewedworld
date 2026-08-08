@@ -80,7 +80,7 @@ const projectsData: Project[] = [
       "Importation et livraison d'une flotte de véhicules pour une entreprise locale.",
     location: "Cotonou, Bénin",
     date: "Avril 2025",
-    image: "/img/projects/flotte-auto.jpg",
+    image: "/img/projects/flotte-auto.jpeg",
   },
 ];
 
