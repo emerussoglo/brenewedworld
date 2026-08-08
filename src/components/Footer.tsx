@@ -35,12 +35,12 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#a-propos">
+              <Link href="/#a-propos">
                 <i className="fa-solid fa-chevron-right arrow-bullet"></i> À propos
               </Link>
             </li>
             <li>
-              <Link href="#services">
+              <Link href="/#services">
                 <i className="fa-solid fa-chevron-right arrow-bullet"></i> Services
               </Link>
             </li>
@@ -50,22 +50,22 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#equipe">
+              <Link href="/#equipe">
                 <i className="fa-solid fa-chevron-right arrow-bullet"></i> Notre équipe
               </Link>
             </li>
             <li>
-              <Link href="#agences">
+              <Link href="/#agences">
                 <i className="fa-solid fa-chevron-right arrow-bullet"></i> Nos agences
               </Link>
             </li>
             <li>
-              <Link href="#faq">
+              <Link href="/#faq">
                 <i className="fa-solid fa-chevron-right arrow-bullet"></i> FAQ
               </Link>
             </li>
             <li>
-              <Link href="#contact">
+              <Link href="/contact">
                 <i className="fa-solid fa-chevron-right arrow-bullet"></i> Contact
               </Link>
             </li>
@@ -77,32 +77,32 @@ export default function Footer() {
           <h4 className="footer-title">NOS SERVICES</h4>
           <ul className="footer-links">
             <li>
-              <Link href="#services">
+              <Link href="/#services">
                 <i className="fa-solid fa-chevron-right arrow-bullet"></i> Génie Civil
               </Link>
             </li>
             <li>
-              <Link href="#services">
+              <Link href="/#services">
                 <i className="fa-solid fa-chevron-right arrow-bullet"></i> Architecture
               </Link>
             </li>
             <li>
-              <Link href="#services">
+              <Link href="/#services">
                 <i className="fa-solid fa-chevron-right arrow-bullet"></i> Études techniques
               </Link>
             </li>
             <li>
-              <Link href="#services">
+              <Link href="/#services">
                 <i className="fa-solid fa-chevron-right arrow-bullet"></i> Contrôle de travaux
               </Link>
             </li>
             <li>
-              <Link href="#services">
+              <Link href="/#services">
                 <i className="fa-solid fa-chevron-right arrow-bullet"></i> Suivi de chantier
               </Link>
             </li>
             <li>
-              <Link href="#services">
+              <Link href="/#services">
                 <i className="fa-solid fa-chevron-right arrow-bullet"></i> Commerce automobile
               </Link>
             </li>
@@ -137,39 +137,39 @@ export default function Footer() {
           </ul>
 
           <div className="footer-socials">
-  <a
-    href="https://wa.me/2290149959549"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="WhatsApp"
-  >
-    <i className="fa-brands fa-whatsapp"></i>
-  </a>
-  <a
-    href="https://facebook.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Facebook"
-  >
-    <i className="fa-brands fa-facebook-f"></i>
-  </a>
-  <a
-    href="https://tiktok.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="TikTok"
-  >
-    <i className="fa-brands fa-tiktok"></i>
-  </a>
-  <a
-    href="https://maps.app.goo.gl/kKuC24kkNUB3fSGd8"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Localisation Google Maps"
-  >
-    <i className="fa-solid fa-location-dot"></i>
-  </a>
-</div>
+            <a
+              href="https://wa.me/2290149959549"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <i className="fa-brands fa-whatsapp"></i>
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <i className="fa-brands fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://tiktok.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+            >
+              <i className="fa-brands fa-tiktok"></i>
+            </a>
+            <a
+              href="https://maps.app.goo.gl/kKuC24kkNUB3fSGd8"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Localisation Google Maps"
+            >
+              <i className="fa-solid fa-location-dot"></i>
+            </a>
+          </div>
         </div>
       </div>
 

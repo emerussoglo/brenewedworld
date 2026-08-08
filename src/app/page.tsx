@@ -7,6 +7,7 @@ import Team from "@/components/Team";
 import Stats from "@/components/Stats";
 import Testimonials from "./testimonials/Testimonials";
 import ContactPage from "./contact/page";
+import FaqSection from "@/components/FaqSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Realisations />
       <Agencies />
       <Team />
+      <FaqSection />
       <Testimonials />
     </main>
   );
