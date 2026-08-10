@@ -2,8 +2,8 @@
 
 :root {
   /* Charte graphique */
-  --primary: #1A6273;
-  --primary-hover: #134B58;
+  --primary: #06143d;
+  --primary-hover: #051033;
   --secondary: #FF005B;
   --secondary-hover: #D9004C;
   
@@ -15,7 +15,7 @@
   --border-color: #E2E8F0;
 
   /* Dégradés subtils */
-  --grad-primary: linear-gradient(135deg, #1A6273 0%, #11424E 100%);
+  --grad-primary: linear-gradient(135deg, #06143d 0%, #051033 100%);
   --grad-accent: linear-gradient(135deg, #FF005B 0%, #C40046 100%);
   --grad-light: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
 
@@ -98,8 +98,8 @@ button {
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 1.1rem;
-  background-color: #e6f0f2;
-  color: var(--primary, #1a6273);
+  background-color: #06143d;
+  color: #fff;
   border: 1px solid rgba(26, 98, 115, 0.15);
   border-radius: 50px;
   font-size: 0.8rem;
@@ -219,7 +219,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--primary, #1a6273);
+  color: #06143d;
   font-size: 0.92rem;
   font-weight: 700;
   text-decoration: none;
@@ -271,7 +271,7 @@ button {
 ========================================== */
 .projects-section {
   padding: 5rem 0;
-  background-color: #1e4a55; /* Fond vert foncé / canard */
+  background-color: #06143d; /* Fond vert foncé / canard */
   overflow: hidden;
 }
 
@@ -290,8 +290,8 @@ button {
   align-items: center;
   gap: 0.4rem;
   padding: 0.35rem 1.1rem;
-  background-color: rgba(255, 255, 255, 0.12); /* Semi-transparent sur fond sombre */
-  color: #38bdf8; /* Bleu cyan lumineux pour un bon contraste */
+  background-color:#06143d; /* Semi-transparent sur fond sombre */
+  color: #fff; /* Bleu cyan lumineux pour un bon contraste */
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50px;
   font-size: 0.8rem;
@@ -329,7 +329,7 @@ button {
 
 .filter-btn {
   background-color: rgba(255, 255, 255, 0.08);
-  color: #e2e8f0;
+  color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0.6rem 1.4rem;
   border-radius: 50px;
@@ -348,7 +348,7 @@ button {
 
 .filter-btn.active {
   background-color: #ffffff;
-  color: #1e4a55; /* Texte couleur de fond pour le bouton actif */
+  color: #06143d; /* Texte couleur de fond pour le bouton actif */
   border-color: #ffffff;
   font-weight: 700;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
@@ -374,7 +374,7 @@ button {
   border-radius: 50%;
   background-color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #1e4a55;
+  color: #06143d;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -467,7 +467,7 @@ button {
   left: 1rem;
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(4px);
-  color: #1e4a55;
+  color: #06143d;
   padding: 0.3rem 0.85rem;
   border-radius: 50px;
   font-size: 0.78rem;
@@ -605,7 +605,7 @@ button {
    1. HERO SECTION (FOND BLEU / VERT CANARD)
 ========================================== */
 .realisations-hero {
-  background-color: #1e4a55; /* Couleur de fond bleu canard */
+  background-color: #06143d; /* Couleur de fond bleu canard */
   padding: 4rem 0 3rem 0;
   text-align: left; /* Alignment à gauche strict */
   color: #ffffff;
@@ -700,7 +700,7 @@ button {
 
 .filter-btn.active {
   background-color: #ffffff;
-  color: #1e4a55;
+  color: #06143d;
   border-color: #ffffff;
   font-weight: 700;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
@@ -761,7 +761,7 @@ button {
   left: 1rem;
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(4px);
-  color: #1e4a55;
+  color: #06143d;
   padding: 0.3rem 0.85rem;
   border-radius: 50px;
   font-size: 0.78rem;
@@ -857,7 +857,7 @@ button {
 
 /* --- Section des statistiques --- */
 .stats-section {
-  background-color: #1e4a55; /* Fond vert canard / vert foncé */
+  background-color: #06143d; /* Fond vert canard / vert foncé */
   padding: 4.5rem 1.5rem;
   width: 100%;
 }
@@ -989,8 +989,8 @@ button {
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 1.1rem;
-  background-color: #e6f0f2;
-  color: var(--primary, #1a6273);
+  background-color: #06143d;
+  color: #fff;
   border: 1px solid rgba(26, 98, 115, 0.15);
   border-radius: 50px;
   font-size: 0.8rem; 
@@ -1095,7 +1095,7 @@ button {
   gap: 0.6rem;
   border: 1px solid #cbd5e1;
   background-color: #ffffff;
-  color: #334155;
+  color: #06143d;
   padding: 0.85rem 2rem;
   border-radius: 50px;
   font-size: 0.95rem;
@@ -1105,8 +1105,8 @@ button {
 }
 
 .btn-all-team:hover {
-  border-color: var(--primary, #1a6273);
-  color: var(--primary, #1a6273);
+  border-color: #06143d;
+  color: #06143d;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
   transform: translateY(-2px);
 }
@@ -1163,8 +1163,8 @@ button {
   align-items: center;
   gap: 0.4rem;
   padding: 0.35rem 1.1rem;
-  background-color: rgba(26, 98, 115, 0.08);
-  color: #1a6273;
+  background-color: #06143d;
+  color: #fff;
   border-radius: 50px;
   font-size: 0.8rem;
   font-weight: 700;
@@ -1257,7 +1257,7 @@ button {
 .author-name {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #06143d;
   margin: 0 0 0.25rem 0;
 }
 
@@ -1317,8 +1317,8 @@ button {
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 1.1rem;
-  background-color: rgba(26, 98, 115, 0.08);
-  color: var(--primary, #1a6273);
+  background-color: #06143d;
+  color: #fff;
   border-radius: 50px;
   font-size: 0.8rem;
   font-weight: 700;
@@ -1392,7 +1392,7 @@ button {
   top: 1.25rem;
   left: 1.25rem;
   background-color: #ffffff;
-  color: #374151;
+  color: #06143d;
   padding: 0.4rem 1.2rem;
   border-radius: 50px;
   font-size: 0.85rem;
@@ -1546,7 +1546,7 @@ button {
 
 /* Hero Section */
 .devis-hero {
-  background-color: #1c525d;
+  background-color: #06143d;
   color: #ffffff;
   padding: 2.5rem 1.25rem 3rem 1.25rem;
 }
@@ -1629,7 +1629,7 @@ button {
 .step-counter {
   font-size: 0.82rem;
   font-weight: 700;
-  color: #1c525d;
+  color: #06143d;
 }
 
 /* Card Formulaire / Steps */
@@ -1673,7 +1673,7 @@ button {
   height: 64px;
   border-radius: 50%;
   background-color: #e0f2fe;
-  color: #1c525d;
+  color: #06143d;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1745,25 +1745,25 @@ button {
 }
 
 .option-card:hover {
-  border-color: #1c525d;
+  border-color: #051033;
   background-color: #f0fdfa;
 }
 
 .option-card.selected {
-  border-color: #1c525d;
+  border-color: #06143d;
   background-color: #f0fdfa;
-  box-shadow: 0 0 0 1px #1c525d;
+  box-shadow: 0 0 0 1px #06143d;
 }
 
 .option-icon {
   font-size: 1.1rem;
-  color: #1c525d;
+  color: #06143d;
 }
 
 .option-text {
   font-size: 0.88rem;
   font-weight: 600;
-  color: #1e293b;
+  color: #06143d;
   flex: 1;
 }
 
@@ -1792,14 +1792,14 @@ button {
 }
 
 .option-card-row:hover {
-  border-color: #1c525d;
+  border-color: #06143d;
   background-color: #f0fdfa;
 }
 
 .option-card-row.selected {
-  border-color: #1c525d;
+  border-color: #06143d;
   background-color: #f0fdfa;
-  box-shadow: 0 0 0 1px #1c525d;
+  box-shadow: 0 0 0 1px #06143d;
 }
 
 .emoji-icon {
@@ -1848,7 +1848,7 @@ button {
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #1c525d;
+  border-color: #06143d;
   box-shadow: 0 0 0 3px rgba(28, 82, 93, 0.12);
 }
 
@@ -1900,7 +1900,7 @@ button {
 .summary-card-header h4 {
   font-size: 0.88rem;
   font-weight: 700;
-  color: #1c525d;
+  color: #06143d;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1982,7 +1982,7 @@ button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #1c525d;
+  background-color: #06143d;
   border: none;
   padding: 0.7rem 1.4rem;
   border-radius: 50px;
@@ -2034,7 +2034,7 @@ button {
 }
 
 .quick-call-card {
-  background-color: #1c525d;
+  background-color: #06143d;
   color: #ffffff;
   border-radius: 16px;
   padding: 1.35rem;
@@ -2060,7 +2060,7 @@ button {
   justify-content: center;
   gap: 0.5rem;
   background-color: #ffffff;
-  color: #1c525d;
+  color: #06143d;
   padding: 0.6rem 1rem;
   border-radius: 50px;
   font-size: 0.82rem;
@@ -2168,8 +2168,8 @@ button {
 
 .faq-badge {
   display: inline-block;
-  background-color: #e6f4f1; /* Teinte claire assortie au thème */
-  color: #1e4a55;
+  background-color: #06143d; /* Teinte claire assortie au thème */
+  color: #fff;
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.35rem 1rem;
@@ -2209,7 +2209,7 @@ button {
 }
 
 .faq-item.open {
-  border-color: #1e4a55;
+  border-color: #06143d;
   box-shadow: 0 6px 20px rgba(30, 74, 85, 0.06);
 }
 
@@ -2241,7 +2241,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1e4a55;
+  color: #06143d;
   cursor: pointer;
   transition: background-color 0.25s ease, transform 0.25s ease;
 }
@@ -2251,7 +2251,7 @@ button {
 }
 
 .faq-item.open .faq-toggle-btn {
-  background-color: #1e4a55;
+  background-color: #06143d;
   color: #ffffff;
 }
 

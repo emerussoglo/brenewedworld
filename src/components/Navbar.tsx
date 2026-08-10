@@ -39,7 +39,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="navbar-logo" onClick={closeMenu}>
           <Image
-            src="/img/logo.jpeg"
+            src="/img/logo.png"
             alt="BR World Group Logo"
             width={160}
             height={50}
@@ -96,7 +96,7 @@ export default function Navbar() {
         <div className="mobile-menu-header">
           <Link href="/" className="navbar-logo" onClick={closeMenu}>
             <Image
-              src="/img/log.png"
+              src="/img/logo.png"
               alt="BR World Group Logo"
               width={140}
               height={45}
