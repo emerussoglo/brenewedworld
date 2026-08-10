@@ -16,7 +16,7 @@ const faqData: FaqItem[] = [
   {
     question: "Comment obtenir un devis ?",
     answer:
-      "Remplissez le formulaire de la page « Demander un devis » ou appelez-nous. Nous revenons vers vous sous 48 heures ouvrées avec une estimation détaillée.",
+      "Remplissez le formulaire de la page « Demander un devis » ou appelez-nous. Nous revenons vers vous sous 24 heures ouvrées avec une estimation détaillée.",
   },
   {
     question: "Travaillez-vous avec les particuliers ?",

@@ -449,7 +449,7 @@ export default function DevisPage() {
                     </div>
                     <h2>Demande envoyée avec succès !</h2>
                     <p>
-                      Merci <strong>{formData.prenom}</strong>. Notre équipe étudie votre dossier et vous contactera sous 48h.
+                      Merci <strong>{formData.prenom}</strong>. Notre équipe étudie votre dossier et vous contactera sous 24h.
                     </p>
                     <Link href="/" className="btn-start-wizard">
                       <span>Retourner à l&apos;accueil</span>
