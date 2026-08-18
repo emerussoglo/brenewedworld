@@ -76,7 +76,7 @@ export default function Team() {
                 className={`team-card reveal ${delayClass}`}
               >
                 {/* Photo du membre */}
-                <div className="team-image-wrapper">
+                {/* <div className="team-image-wrapper">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -84,7 +84,7 @@ export default function Team() {
                     className="team-image"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   />
-                </div>
+                </div> */}
 
                 {/* Infos textuelles */}
                 <div className="team-content">

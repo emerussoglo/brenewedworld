@@ -11,16 +11,83 @@ export default function ContactPage() {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
+  // État pour contrôler la modale (pop-up)
+  const [modalState, setModalState] = useState<{
+    isOpen: boolean;
+    type: "success" | "error";
+    title: string;
+    message: string;
+  }>({
+    isOpen: false,
+    type: "success",
+    title: "",
+    message: "",
+  });
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Logique d'envoi du formulaire
-    console.log("Données envoyées :", formData);
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setModalState({
+          isOpen: true,
+          type: "success",
+          title: "Message envoyé !",
+          message:
+            "Merci ! Votre message a bien été transmis. Nos équipes vous répondront dans les plus brefs délais.",
+        });
+        setFormData({
+          fullName: "",
+          phone: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        setModalState({
+          isOpen: true,
+          type: "error",
+          title: "Échec de l'envoi",
+          message:
+            result.message ||
+            "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
+        });
+      }
+    } catch (error) {
+      console.error("Erreur:", error);
+      setModalState({
+        isOpen: true,
+        type: "error",
+        title: "Erreur de connexion",
+        message:
+          "Impossible de contacter le serveur. Veuillez vérifier votre connexion internet et réessayer.",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const closeModal = () => {
+    setModalState((prev) => ({ ...prev, isOpen: false }));
   };
 
   return (
@@ -206,8 +273,8 @@ export default function ContactPage() {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn-submit">
-                <span>Envoyer le message</span>
+              <button type="submit" className="btn-submit" disabled={loading}>
+                <span>{loading ? "Envoi en cours..." : "Envoyer le message"}</span>
                 <i className="fa-solid fa-paper-plane"></i>
               </button>
             </form>
@@ -215,6 +282,35 @@ export default function ContactPage() {
 
         </div>
       </section>
+
+      {/* MODALE POP-UP PREMIER PLAN */}
+      {modalState.isOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div
+            className="modal-card"
+            onClick={(e) => e.stopPropagation()} // Empêche la fermeture au clic sur la carte
+          >
+            <div className={`modal-icon-box ${modalState.type}`}>
+              {modalState.type === "success" ? (
+                <i className="fa-solid fa-circle-check"></i>
+              ) : (
+                <i className="fa-solid fa-circle-xmark"></i>
+              )}
+            </div>
+
+            <h3 className="modal-title">{modalState.title}</h3>
+            <p className="modal-message">{modalState.message}</p>
+
+            <button
+              type="button"
+              className={`modal-btn ${modalState.type}`}
+              onClick={closeModal}
+            >
+              D'accord
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

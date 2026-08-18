@@ -34,7 +34,7 @@ export default function About() {
           {/* Colonne Droite : Textes et Actions (Glisse depuis la droite avec léger retard) */}
           <div className="about-content reveal-right delay-1">
             <p className="about-intro">
-              Building Renewed World (BR World Group) est spécialisée dans le
+              BUILDING RENEWED WORLD (B-rWorld Group) est spécialisée dans le
               Génie Civil, l&apos;Architecture, l&apos;Étude, le Contrôle et le
               Suivi des travaux de BTP ainsi que dans le Commerce de Véhicules
               Automobiles.
@@ -44,7 +44,7 @@ export default function About() {
               Forte d&apos;une équipe pluridisciplinaire, qualifiée et expérimentée,
               l&apos;entreprise accompagne particuliers, entreprises et
               institutions dans la réalisation de projets durables et innovants.
-              Créée le 16 juin 2021, BR World Group s&apos;impose comme un
+              Créée le 16 juin 2021, B-rWorld Group s&apos;impose comme un
               partenaire de confiance grâce à une gestion rigoureuse, un parc
               matériel performant et une approche centrée sur la satisfaction
               client.

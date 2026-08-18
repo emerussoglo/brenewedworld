@@ -25,8 +25,7 @@ const projectTypes = [
   { id: "commerce-automobile", label: "Commerce automobile", icon: "fa-car" },
 ];
 
-
-  const budgetRanges = [
+const budgetRanges = [
   { id: "moins-5m", label: "Moins de 5M FCFA", icon: "fa-seedling" },
   { id: "5m-15m", label: "5 à 15M FCFA", icon: "fa-chart-line" },
   { id: "15m-50m", label: "15 à 50M FCFA", icon: "fa-building-columns" },
@@ -36,6 +35,20 @@ const projectTypes = [
 export default function DevisPage() {
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  // État de la modale de notification
+  const [modalState, setModalState] = useState<{
+    isOpen: boolean;
+    type: "success" | "error";
+    title: string;
+    message: string;
+  }>({
+    isOpen: false,
+    type: "success",
+    title: "",
+    message: "",
+  });
 
   const [formData, setFormData] = useState<FormData>({
     nom: "",
@@ -73,10 +86,68 @@ export default function DevisPage() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const getLabelForType = (id: string) =>
+    projectTypes.find((t) => t.id === id)?.label || id;
+
+  const getLabelForBudget = (id: string) =>
+    budgetRanges.find((b) => b.id === id)?.label || id;
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Données du formulaire finales :", formData);
-    setIsSubmitted(true);
+    setLoading(true);
+
+    try {
+      const payload = {
+        ...formData,
+        typeProjet: getLabelForType(formData.typeProjet),
+        budget: getLabelForBudget(formData.budget),
+      };
+
+      const response = await fetch("/api/devis", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        setModalState({
+          isOpen: true,
+          type: "success",
+          title: "Demande envoyée !",
+          message:
+            "Votre demande de devis a été transmise avec succès. Nos équipes vous recontacteront sous 24h à 48h.",
+        });
+      } else {
+        setModalState({
+          isOpen: true,
+          type: "error",
+          title: "Échec de l'envoi",
+          message:
+            result.message ||
+            "Une erreur est survenue lors de l'envoi. Veuillez réessayer.",
+        });
+      }
+    } catch (error) {
+      console.error("Erreur d'envoi devis:", error);
+      setModalState({
+        isOpen: true,
+        type: "error",
+        title: "Erreur serveur",
+        message:
+          "Impossible de joindre le serveur. Veuillez vérifier votre connexion et reessayer.",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const closeModal = () => {
+    setModalState((prev) => ({ ...prev, isOpen: false }));
   };
 
   // Validation par étape
@@ -100,12 +171,6 @@ export default function DevisPage() {
         return true;
     }
   };
-
-  const getLabelForType = (id: string) =>
-    projectTypes.find((t) => t.id === id)?.label || id;
-
-  const getLabelForBudget = (id: string) =>
-    budgetRanges.find((b) => b.id === id)?.label || id;
 
   return (
     <main className="devis-page">
@@ -202,33 +267,33 @@ export default function DevisPage() {
                   </div>
                 )}
 
-               {/* ÉTAPE 2 : BUDGET ESTIMATIF */}
-{currentStep === 2 && (
-  <div className="step-content">
-    <span className="step-category">FINANCEMENT</span>
-    <h2 className="step-question">
-      Quel est votre budget estimatif ?
-    </h2>
-    <div className="options-list">
-      {budgetRanges.map((item) => (
-        <button
-          key={item.id}
-          type="button"
-          className={`option-card-row ${
-            formData.budget === item.id ? "selected" : ""
-          }`}
-          onClick={() => handleSelectOption("budget", item.id)}
-        >
-          <i className={`fa-solid ${item.icon} option-icon`}></i>
-          <span className="option-text">{item.label}</span>
-          {formData.budget === item.id && (
-            <i className="fa-solid fa-circle-check check-icon"></i>
-          )}
-        </button>
-      ))}
-    </div>
-  </div>
-)}
+                {/* ÉTAPE 2 : BUDGET ESTIMATIF */}
+                {currentStep === 2 && (
+                  <div className="step-content">
+                    <span className="step-category">FINANCEMENT</span>
+                    <h2 className="step-question">
+                      Quel est votre budget estimatif ?
+                    </h2>
+                    <div className="options-list">
+                      {budgetRanges.map((item) => (
+                        <button
+                          key={item.id}
+                          type="button"
+                          className={`option-card-row ${
+                            formData.budget === item.id ? "selected" : ""
+                          }`}
+                          onClick={() => handleSelectOption("budget", item.id)}
+                        >
+                          <i className={`fa-solid ${item.icon} option-icon`}></i>
+                          <span className="option-text">{item.label}</span>
+                          {formData.budget === item.id && (
+                            <i className="fa-solid fa-circle-check check-icon"></i>
+                          )}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* ÉTAPE 3 : DESCRIPTION */}
                 {currentStep === 3 && (
@@ -434,8 +499,14 @@ export default function DevisPage() {
                       </div>
                     </div>
 
-                    <button type="submit" className="btn-submit-devis">
-                      <span>Confirmer et envoyer la demande</span>
+                    <button
+                      type="submit"
+                      className="btn-submit-devis"
+                      disabled={loading}
+                    >
+                      <span>
+                        {loading ? "Envoi en cours..." : "Confirmer et envoyer la demande"}
+                      </span>
                       <i className="fa-solid fa-paper-plane"></i>
                     </button>
                   </form>
@@ -524,6 +595,35 @@ export default function DevisPage() {
           </div>
         </div>
       </section>
+
+      {/* MODALE POP-UP PREMIER PLAN */}
+      {modalState.isOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div
+            className="modal-card"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className={`modal-icon-box ${modalState.type}`}>
+              {modalState.type === "success" ? (
+                <i className="fa-solid fa-circle-check"></i>
+              ) : (
+                <i className="fa-solid fa-circle-xmark"></i>
+              )}
+            </div>
+
+            <h3 className="modal-title">{modalState.title}</h3>
+            <p className="modal-message">{modalState.message}</p>
+
+            <button
+              type="button"
+              className={`modal-btn ${modalState.type}`}
+              onClick={closeModal}
+            >
+              D'accord
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

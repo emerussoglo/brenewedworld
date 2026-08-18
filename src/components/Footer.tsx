@@ -9,15 +9,15 @@ export default function Footer() {
         <div className="footer-col footer-brand">
           <div className="footer-logo-card">
             <Image
-              src="/img/log.png"
-              alt="BR World Group Logo"
+              src="/img/logo.png"
+              alt="B-rWorld Group Logo"
               width={150}
               height={50}
               style={{ objectFit: "contain" }}
             />
           </div>
           <p className="footer-description">
-            Building Renewed World (BR World Group) accompagne particuliers,
+            BUILDING RENEWED WORLD (B-rWorld Group) accompagne particuliers,
             entreprises et institutions dans le génie civil, l&apos;architecture, les
             études, le contrôle et le suivi de travaux, ainsi que le commerce
             automobile.
@@ -176,7 +176,7 @@ export default function Footer() {
       {/* Barre du bas avec copyright */}
       <div className="footer-bottom">
         <div className="container footer-bottom-content">
-          <p>© 2026 Building Renewed World — BR World Group. Tous droits réservés.</p>
+          <p>© 2026  BUILDING RENEWED WORLD — B-rWorld Group. Tous droits réservés.</p>
           <p className="created-date">Créée le 16 juin 2021 · Calavi, Bénin</p>
         </div>
       </div>

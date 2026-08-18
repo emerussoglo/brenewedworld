@@ -79,7 +79,7 @@ export default function Agencies() {
               className={`agency-card reveal delay-${index + 1}`}
             >
               {/* Photo de façade avec Badge de ville */}
-              <div className="agency-image-wrapper">
+              {/* <div className="agency-image-wrapper">
                 <Image
                   src={agency.image}
                   alt={`Façade de l'agence ${agency.name}`}
@@ -88,7 +88,7 @@ export default function Agencies() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <span className="agency-city-badge">{agency.city}</span>
-              </div>
+              </div> */}
 
               {/* Informations textuelles */}
               <div className="agency-content">

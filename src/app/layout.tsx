@@ -7,7 +7,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import ScrollRevealProvider from "@/components/ScrollRevealProvider";
 
 export const metadata: Metadata = {
-  title: "Building Renewed World — BR World Group",
+  title: " BUILDING RENEWED WORLD — B-rWorld Group", 
   description:
     "Génie Civil, Architecture, Étude, Contrôle & Suivi de travaux, Commerce Automobile à Calavi, Bénin.",
 };

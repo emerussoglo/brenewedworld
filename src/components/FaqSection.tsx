@@ -9,7 +9,7 @@ interface FaqItem {
 
 const faqData: FaqItem[] = [
   {
-    question: "Dans quels domaines intervient BR World Group ?",
+    question: "Dans quels domaines intervient B-rWorld Group ?",
     answer:
       "Nous intervenons en génie civil, architecture, études techniques, contrôle et suivi de travaux de BTP, ainsi que dans le commerce de véhicules automobiles.",
   },
