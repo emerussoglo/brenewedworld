@@ -8,7 +8,7 @@ import ScrollRevealProvider from "@/components/ScrollRevealProvider";
 
 export const metadata: Metadata = {
   title: " BUILDING RENEWED WORLD — B-rWorld Group", 
-  description:
+  description: 
     "Génie Civil, Architecture, Étude, Contrôle & Suivi de travaux, Commerce Automobile à Calavi, Bénin.",
 };
 
