@@ -8,7 +8,6 @@ export default function About() {
         {/* En-tête centré avec apparition verticale */}
         <div className="about-header reveal">
           <div className="about-badge">
-            <span className="badge-line">—</span>
             <span>À PROPOS DE NOUS</span>
           </div> 
 

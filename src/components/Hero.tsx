@@ -112,13 +112,14 @@ export default function Hero() {
 
   return (
     <section className="hero-section">
+      <br />
       {/* Diapositives d'arrière-plan */}
       {slides.map((slide, index) => (
         <div
           key={slide.id}
           className={`hero-slide ${index === currentIndex ? "active" : ""}`}
           style={{
-            backgroundImage: `linear-gradient(rgba(6, 20, 61, 0.75), rgba(6, 20, 61, 0.82)), url(${slide.bgImage})`,
+            backgroundImage: `linear-gradient(rgba(6, 20, 61, 0.6), rgba(6, 20, 61, 0.7)), url(${slide.bgImage})`,
           }}
         >
           {index === currentIndex && (

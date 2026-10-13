@@ -109,7 +109,7 @@ button {
   background-color: #f1f5f7; /* Fond clair très léger conforme à la maquette */
   background-color: #fff; /* Fond clair très léger conforme à la maquette */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-  padding: 0.8rem 1.5rem;
+  padding: 1rem 1.1rem;
   transition: all 0.3s ease;
 }
 
@@ -118,7 +118,7 @@ button {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .navbar-logo {
@@ -135,7 +135,7 @@ button {
 .nav-link {
   position: relative;
   font-family: var(--font-titles);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #06143d;
   padding: 0.5rem 0;
@@ -143,7 +143,7 @@ button {
 }
 
 .nav-link:hover {
-  color: var(--primary);
+  color: #C40046;
 }
 
 .nav-link.active {
@@ -181,9 +181,9 @@ button {
   gap: 0.6rem;
   background-color: var(--secondary);
   color: #ffffff;
-  padding: 0.6rem .8rem;
-  border-radius: 50px;
-  font-size: 0.9rem;
+  padding: 0.8rem .95rem;
+  border-radius: 10px;
+  font-size: 1rem;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 15px rgba(255, 0, 91, 0.25);
@@ -363,7 +363,7 @@ button {
   background-color: var(--secondary);
   color: #ffffff;
   padding: 0.6rem .8rem;
-  border-radius: 50px;
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -625,11 +625,13 @@ button {
 .hero-section {
   position: relative;
   width: 100%;
+  margin: auto;
   height: calc(100vh - 80px);
-  min-height: 570px;
+  border-radius: 0px;
+  min-height: 520px;
   max-height: 800px;
   overflow: hidden;
-  background-color: #06143d;
+  background: #06143d;
 }
 
 /* Slides */
@@ -691,11 +693,11 @@ button {
 /* Titre principal */
 .hero-title {
   font-family: var(--font-titles);
-  font-size: 3.7rem;
+  font-size: 3.8rem;
   font-weight: 700;
   line-height: 1.15;
   color: #ffffff;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Slogan Rose */
@@ -704,7 +706,7 @@ button {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--secondary);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 /* Description */
@@ -731,8 +733,8 @@ button {
   gap: 0.6rem;
   background-color: var(--secondary);
   color: #ffffff;
-  padding: 0.7rem 1.7rem;
-  border-radius: 50px;
+  padding: 0.9rem 1.7rem;
+  border-radius: 10px;
   font-size: 0.9rem;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -750,10 +752,11 @@ button {
   align-items: center;
   gap: 0.6rem;
   background: rgba(255, 255, 255, 0.1);
+  background: #051033;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  padding: 0.7rem 1.7rem;
-  border-radius: 50px;
+  border: 1px solid #fff;
+  padding: 0.8rem 1.7rem;
+  border-radius: 10px;
   font-size: 0.9rem;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -761,7 +764,7 @@ button {
 }
 
 .btn-hero-secondary:hover {
-  background: rgba(255, 255, 255, 0.22);
+  background: #D9004C;
   border-color: #ffffff;
   transform: translateY(-2px);
 }
@@ -771,13 +774,13 @@ button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 46px;
-  height: 46px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
+  background: #051033;
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #ffffff;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1086,7 +1089,7 @@ button {
   padding: 0.85rem;
   background-color: #ff0066; /* Magenta vif identique à la maquette */
   color: #ffffff;
-  border-radius: 50px;
+  border-radius: 10px;
   font-size: 0.95rem;
   font-weight: 700;
   text-decoration: none;
@@ -1185,7 +1188,7 @@ button {
   background-color: #06143d;
   color: #ffffff;
   border: none;
-  border-radius: 50px;
+  border-radius: 10px;
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
@@ -1308,7 +1311,7 @@ button {
 .about-image-wrapper {
   position: relative;
   width: 100%;
-  border-radius: 24px;
+  border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(26, 98, 115, 0.08);
 }
@@ -1318,7 +1321,7 @@ button {
   height: auto;
   object-fit: cover;
   display: block;
-  border-radius: 24px;
+  border-radius: 0px;
   transition: transform 0.5s ease;
 }
 
@@ -1363,8 +1366,8 @@ button {
   background-color: var(--primary);
   color: #ffffff;
   padding: 0.85rem 1.8rem;
-  border-radius: 50px;
-  font-size: 0.95rem;
+  border-radius: 10px;
+  font-size: 1rem;
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0 4px 14px rgba(26, 98, 115, 0.25);
@@ -1383,8 +1386,8 @@ button {
   color: var(--primary);
   border: 1px solid #06143d;
   padding: 0.85rem 1.8rem;
-  border-radius: 50px;
-  font-size: 0.95rem;
+  border-radius: 10px;
+  font-size: 1rem;
   font-weight: 600;
   transition: all 0.3s ease;
 }

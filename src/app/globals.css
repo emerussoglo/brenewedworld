@@ -79,20 +79,20 @@ button {
 
 
 
-
 /* ==========================================
-   SERVICES SECTION
+   SECTION SERVICES (Inspiré du nouveau design)
 ========================================== */
+
 .services-section {
-  padding: 5rem 0;
-  background-color: #f8fafc; /* Fond légèrement gris/bleuté ultra doux */
+  padding: 5.5rem 0;
+  background-color: #f8fafc;
 }
 
 /* En-tête */
 .services-header {
   text-align: center;
   max-width: 780px;
-  margin: 0 auto 3.6rem auto;
+  margin: 0 auto 3.5rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,13 +101,11 @@ button {
 .services-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
   padding: 0.35rem 1.1rem;
-  background-color: #06143d;
-  color: #fff;
-  border: 1px solid rgba(26, 98, 115, 0.15);
+  background-color: #051033;
+  color: #ffffff;
   border-radius: 50px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -115,18 +113,22 @@ button {
 }
 
 .services-title {
-  font-family: var(--font-titles);
-  font-size: 2.5rem;
+  font-family: var(--font-titles, sans-serif);
+  font-size: 2.4rem;
   font-weight: 800;
   color: #0f172a;
-  line-height: 1.2;
-  margin-bottom: 1.2rem;
+  line-height: 1.25;
+  margin-bottom: 1rem;
   letter-spacing: -0.5px;
+}
 
+.services-title .italic {
+  font-style: italic;
+  color: #051033;
 }
 
 .services-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #64748b;
   line-height: 1.6;
 }
@@ -135,104 +137,135 @@ button {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 1.7rem;
 }
 
-/* Carte Service */
+/* Carte Service moderne inspirée du visuel */
 .service-card {
   background-color: #ffffff;
-  border-radius: 20px;
-  padding: 2.3rem 1rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) inset 0 0px 20px rgba(0, 0, 0, 0.02);
-  border: 2px solid #C40046;
+  border-radius: 24px;
+  padding: 0.85rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  overflow: hidden;
-  background-image: radial-gradient(rgba(196,0,70, 0.08) 1.5px, transparent 1.5px);
-  background-size: 10px 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-
-
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(30, 74, 85, 0.12);
+  border-color: rgba(30, 74, 85, 0.2);
 }
 
-/* Icône en haut de carte */
-.service-icon-wrapper {
-  width: 50px;
-  height: 50px;
-  border-radius: 16px;
-  background-color: #C40046; /* Fond pastel rosé élégant */
-  color: #fff;
+/* Conteneur d'image supérieur arrondi */
+.service-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border-radius: 18px;
+  overflow: hidden;
+  background-color: #e2e8f0;
+}
+
+.service-card-image {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-card-image {
+  transform: scale(1.06);
+}
+
+/* Badge icône flottant sur l'image */
+.service-icon-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background-color: #051033;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
-  margin-bottom: 1.4rem;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Contenu textuel de la carte */
+.service-card-content {
+  padding: 1.25rem 0.6rem 0.6rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+}
 
-/* Titre & Description */
 .service-card-title {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-family: var(--font-titles, sans-serif);
+  font-size: 1.25rem;
+  font-weight: 800;
   color: #0f172a;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .service-card-description {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: #64748b;
-  line-height: 1.5;
-  margin-bottom: 1rem;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
 }
 
 /* Liste des fonctionnalités */
 .service-features-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.2rem;
 }
 
 .service-features-list li {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  font-size: 0.9rem;
-  color: #475569;
+  gap: 0.6rem;
+  font-size: 0.84rem;
+  color: #051033;
   font-weight: 500;
-} 
+}
 
 .service-check-icon {
-  color: #C40046; /* Coche de couleur vive (rose/fuchsia doux) */
-  font-size: 0.85rem;
+  color: #ff006e;
+  font-size: 0.8rem;
 }
 
-/* Lien bas de carte */
-.service-link {
+/* Footer & Bouton Pilule (Pill button) */
+.service-card-footer {
   margin-top: auto;
+  padding-top: 0rem;
+}
+
+.service-btn-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: #06143d;
-  font-size: 0.92rem;
+  gap: 0.6rem;
+  background-color: #051033;
+  color: #ffffff;
+  padding: 0.65rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.82rem;
   font-weight: 700;
   text-decoration: none;
-  transition: gap 0.2s ease;
+  transition: all 0.25s ease;
 }
 
-.service-link:hover {
-  gap: 0.75rem;
+.service-btn-pill:hover {
+  background-color: #ff006e;
+  transform: translateX(3px);
+  box-shadow: 0 4px 14px rgba(255, 0, 110, 0.3);
 }
 
 /* ==========================================
@@ -243,9 +276,9 @@ button {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.4rem;
   }
-  
+
   .services-title {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
 }
 
@@ -259,18 +292,13 @@ button {
   }
 
   .services-title {
-    font-size: 1.7rem;
+    font-size: 1.65rem;
   }
 
-  .services-subtitle {
-    font-size: 0.9rem;
-  }
-
-  .service-card {
-    padding: 1.9rem 1.4rem;
+  .service-card-image-wrapper {
+    height: 160px;
   }
 }
-
 /* ==========================================
    RÉALISATIONS / PROJECTS SECTION (DARK MODE)
 ========================================== */
@@ -535,7 +563,7 @@ button {
   background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   padding: 0.85rem 2rem;
-  border-radius: 50px;
+  border-radius: 10px;
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
@@ -1102,7 +1130,7 @@ button {
   background-color: #ffffff;
   color: #06143d;
   padding: 0.85rem 2rem;
-  border-radius: 50px;
+  border-radius: 10px;
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
@@ -1713,7 +1741,7 @@ button {
   padding: 0.85rem 1.75rem;
   background-color: #ff006e;
   color: #ffffff;
-  border-radius: 50px;
+  border-radius: 10px;
   font-weight: 700;
   font-size: 0.9rem;
   text-decoration: none;
@@ -1990,7 +2018,7 @@ button {
   background-color: #06143d;
   border: none;
   padding: 0.7rem 1.4rem;
-  border-radius: 50px;
+  border-radius: 10px;
   color: #ffffff;
   font-weight: 700;
   font-size: 0.85rem;
@@ -2018,7 +2046,7 @@ button {
   background-color: #ff006e;
   color: #ffffff;
   border: none;
-  border-radius: 50px;
+  border-radius: 10px;
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
@@ -2067,7 +2095,7 @@ button {
   background-color: #ffffff;
   color: #06143d;
   padding: 0.6rem 1rem;
-  border-radius: 50px;
+  border-radius: 10px;
   font-size: 0.82rem;
   font-weight: 700;
   text-decoration: none;

@@ -59,7 +59,6 @@ export default function Agencies() {
         {/* En-tête de section avec reveal */}
         <div className="agencies-header reveal">
           <div className="agencies-badge">
-            <span className="badge-line">—</span>
             <span>NOS IMPLANTATIONS</span>
           </div>
 

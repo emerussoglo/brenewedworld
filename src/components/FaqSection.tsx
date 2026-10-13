@@ -52,7 +52,7 @@ export default function FaqSection() {
       <div className="faq-container">
         {/* En-tête de la section FAQ */}
         <div className="faq-header">
-          <span className="faq-badge">— FAQ</span>
+          <span className="faq-badge">FAQ</span>
           <h2 className="faq-title">Vos questions, <span className="italic">nos réponses</span> </h2>
         </div>
 

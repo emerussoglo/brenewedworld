@@ -82,7 +82,6 @@ export default function Testimonials() {
         {/* En-tête */}
         <div className="testimonials-header">
           <div className="testimonials-badge">
-            <span className="badge-line">—</span>
             <span>TÉMOIGNAGES</span>
           </div>
           <h2 className="testimonials-title">Ils nous font <span className="italic">confiance</span> </h2>

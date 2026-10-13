@@ -11,9 +11,8 @@ const navLinks = [
   { name: "À propos", href: "/#a-propos" },
   { name: "Services", href: "/#services" },
   { name: "Réalisations", href: "/realisations" },
-  { name: "Notre équipe", href: "/#equipe" },
+  // { name: "Notre équipe", href: "/#equipe" },
   { name: "Nos agences", href: "/#agences" },
-  { name: "FAQ", href: "/#faq" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -41,8 +40,8 @@ export default function Navbar() {
           <Image
             src="/img/logo.png"
             alt="BR World Group Logo"
-            width={160}
-            height={50}
+            width={170}
+            height={60}
             priority
             style={{ objectFit: "contain" }}
           />
@@ -89,7 +88,7 @@ export default function Navbar() {
         >
           <i className="fa-solid fa-bars"></i>
         </button>
-      </div>
+      </div> 
 
       {/* Menu Overlay Mobile */}
       <div className={`mobile-menu-overlay ${isOpen ? "open" : ""}`}>

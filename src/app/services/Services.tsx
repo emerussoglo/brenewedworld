@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface ServiceItem {
   id: string;
   icon: string;
   title: string;
   description: string;
+  image: string;
   features: string[];
 }
 
@@ -15,6 +17,7 @@ const servicesData: ServiceItem[] = [
     title: "Génie Civil",
     description:
       "Construction de bâtiments, ouvrages d'art, voiries et réseaux divers avec une exigence absolue de qualité structurelle.",
+    image: "/img/services/genie-civil.jpg",
     features: [
       "Bâtiments R+ et villas",
       "Ouvrages d'art",
@@ -27,6 +30,7 @@ const servicesData: ServiceItem[] = [
     title: "Architecture",
     description:
       "Conception architecturale sur mesure, du concept aux plans d'exécution, avec modélisation 3D et rendus réalistes.",
+    image: "/img/services/architecture.jpg",
     features: [
       "Esquisses & APS/APD",
       "Modélisation 3D",
@@ -39,6 +43,7 @@ const servicesData: ServiceItem[] = [
     title: "Études techniques",
     description:
       "Études de structure, de sol, dimensionnement, métrés et devis quantitatifs estimatifs fiables et bancables.",
+    image: "/img/services/etudes.jpg",
     features: [
       "Notes de calcul",
       "Métrés & DQE",
@@ -51,6 +56,7 @@ const servicesData: ServiceItem[] = [
     title: "Contrôle de travaux",
     description:
       "Contrôle technique indépendant, vérification de conformité et essais pour sécuriser chaque étape du chantier.",
+    image: "/img/services/controle.jpg",
     features: [
       "Conformité normative",
       "Essais matériaux",
@@ -63,6 +69,7 @@ const servicesData: ServiceItem[] = [
     title: "Suivi de chantier",
     description:
       "Pilotage, coordination et reporting régulier : délais maîtrisés, budget tenu, qualité constante.",
+    image: "/img/services/suivi.jpg",
     features: [
       "Planning & OPC",
       "Reporting hebdomadaire",
@@ -75,6 +82,7 @@ const servicesData: ServiceItem[] = [
     title: "Commerce automobile",
     description:
       "Importation et vente de véhicules soigneusement sélectionnés, contrôlés et livrés avec accompagnement complet.",
+    image: "/img/services/auto.jpg",
     features: [
       "Véhicules neufs & occasions",
       "Import sur commande",
@@ -87,27 +95,25 @@ export default function Services() {
   return (
     <section className="services-section" id="services">
       <div className="container">
-        {/* En-tête de la section : Entrée verticale douce */}
+        {/* En-tête de la section */}
         <div className="services-header reveal">
           <div className="services-badge">
-            <span className="badge-line">—</span>
             <span>NOS SERVICES</span>
           </div>
 
           <h2 className="services-title">
-            Six expertises, une seule exigence : <span className="italic"> la qualité </span>
+            Six expertises, une seule exigence : <span className="italic">la qualité</span>
           </h2>
 
           <p className="services-subtitle">
             Du premier croquis à la remise des clés, nous couvrons l&apos;ensemble
-            de la chaîne de valeur du bâtiment — et bien plus.
+            de la chaîne de valeur du bâtiment et bien plus.
           </p>
         </div>
 
-        {/* Grille des cartes services (3x2) */}
+        {/* Grille des cartes services inspirée du design de référence */}
         <div className="services-grid">
           {servicesData.map((service, index) => {
-            // Calcule le délai (delay-1, delay-2, delay-3) pour chaque colonne de la grille
             const delayClass = `delay-${(index % 3) + 1}`;
 
             return (
@@ -115,40 +121,48 @@ export default function Services() {
                 key={service.id}
                 className={`service-card reveal-scale ${delayClass}`}
               >
-                {/* Icône avec fond arrondi pastel */}
-                <div className="service-icon-wrapper">
-                  <i className={service.icon}></i>
+                {/* Image / Visuel en haut de carte */}
+                <div className="service-card-image-wrapper">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="service-card-image"
+                  />
+                  <div className="service-icon-badge">
+                    <i className={service.icon}></i>
+                  </div>
                 </div>
 
-                {/* Titre & Description */}
-                <h3 className="service-card-title">{service.title}</h3>
-                <p className="service-card-description">
-                  {service.description}
-                </p>
+                {/* Contenu textuel */}
+                <div className="service-card-content">
+                  <h3 className="service-card-title">{service.title}</h3>
+                  <p className="service-card-description">
+                    {service.description}
+                  </p>
 
-                {/* Liste à puces avec coches */}
-                <ul className="service-features-list">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx}>
-                      <i className="fa-solid fa-check service-check-icon"></i>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="service-features-list">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx}>
+                        <i className="fa-solid fa-check service-check-icon"></i>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                {/* Lien bas de carte */}
-               <Link
-  href="/devis"
-  className="service-link"
->
-  <span>Demander un devis</span>
-  <i className="fa-solid fa-arrow-right"></i>
-</Link>
+                  {/* Bouton Pill comme dans la référence */}
+                  <div className="service-card-footer">
+                    <Link href="/devis" className="service-btn-pill">
+                      <span>Demander un devis</span>
+                      <i className="fa-solid fa-arrow-right"></i>
+                    </Link>
+                  </div>
+                </div>
               </div>
             );
           })}
         </div>
       </div>
     </section>
-  ); 
+  );
 }

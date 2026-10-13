@@ -51,7 +51,6 @@ export default function Team() {
         {/* En-tête centré avec reveal */}
         <div className="team-header reveal">
           <div className="team-badge">
-            <span className="badge-line">—</span>
             <span>NOTRE ÉQUIPE</span>
           </div>
 

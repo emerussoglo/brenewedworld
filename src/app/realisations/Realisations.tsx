@@ -199,7 +199,6 @@ export default function Realisations() {
         {/* En-tête centré */}
         <div className="projects-header reveal">
           <div className="projects-badge">
-            <span className="badge-line">—</span>
             <span>NOS RÉALISATIONS</span>
           </div>
 
